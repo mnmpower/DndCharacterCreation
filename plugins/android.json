@@ -9,6 +9,9 @@
   "installed_plugins": {
     "cordova-plugin-whitelist": {
       "PACKAGE_NAME": "be.webreggers.dndCharacterCreation"
+    },
+    "cordova-plugin-splashscreen": {
+      "PACKAGE_NAME": "be.webreggers.dndCharacterCreation"
     }
   },
   "dependent_plugins": {}
