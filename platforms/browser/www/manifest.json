@@ -1,0 +1,11 @@
+{
+  "background_color": "#FFF",
+  "display": "standalone",
+  "name": "DnD_Character_Manager",
+  "short_name": "DnD_Character_Manager",
+  "version": "be.webreggers.dndCharacterCreation",
+  "description": "A sample Apache Cordova application that responds to the deviceready event.",
+  "author": "Apache Cordova Team",
+  "icons": [],
+  "start_url": "index.html"
+}
