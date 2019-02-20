@@ -24,17 +24,17 @@ body {
     -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
     -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
     -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
-    background-color:#E4E4E4;
-    background-image:linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    background-image:-webkit-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    background-image:-ms-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    background-image:-webkit-gradient(
-        linear,
-        left top,
-        left bottom,
-        color-stop(0, #A7A7A7),
-        color-stop(0.51, #E4E4E4)
-    );
+    background-color:#c62828   ;
+
+    background-image: linear-gradient(RGB(87.8,87.8,87.8),RGB(77.6,15.7,15.7));
+    /*background-image: linear-gradient(top, #e0e0e0 0%, #c62828    51%);*/
+    background-image:-moz-linear-gradient(top, #e0e0e0 0%, #c62828    51%);
+    background-image:-webkit-linear-gradient(top, #e0e0e0 0%, #c62828    51%);
+    background-image:-o-linear-gradient(top, #e0e0e0 0%, #c62828    51%);
+    background-image:-ms-linear-gradient(top, #e0e0e0 0%, #c62828    51%);
+    background-image:-webkit-gradient(linear,left top,left bottom,color-stop(0, #e0e0e0),color-stop(0.51, #c62828));
+
+
     background-attachment:fixed;
     font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
     font-size:12px;
@@ -78,25 +78,6 @@ h1 {
     text-align:center;
 }
 
-.event {
-    border-radius:4px;
-    -webkit-border-radius:4px;
-    color:#FFFFFF;
-    font-size:12px;
-    margin:0px 30px;
-    padding:2px 0px;
-}
-
-.event.listening {
-    background-color:#333333;
-    display:block;
-}
-
-.event.received {
-    background-color:#4B946A;
-    display:none;
-}
-
 @keyframes fade {
     from { opacity: 1.0; }
     50% { opacity: 0.4; }
@@ -109,7 +90,11 @@ h1 {
     to { opacity: 1.0; }
 }
  
-.blink {
-    animation:fade 3000ms infinite;
-    -webkit-animation:fade 3000ms infinite;
+/*.blink {*/
+    /*animation:fade 3000ms infinite;*/
+    /*-webkit-animation:fade 3000ms infinite;*/
+/*}*/
+.btn-small{
+    width: 250px;
+
 }

@@ -1,4 +1,4 @@
-#Wed Feb 20 19:34:59 CET 2019
+#Wed Feb 20 21:14:39 CET 2019
 base.0=D\:\\CordovaProjecten\\DndCharacterCreation\\platforms\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
 path.0=classes.dex
 renamed.0=classes.dex
