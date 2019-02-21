@@ -30,11 +30,11 @@
 		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
 
 		<!-- Toevoegen van Materialize -->
-		<link rel="stylesheet"
-		      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css"/>
+		<link rel="stylesheet" href="css/materialize.css"/>
 
 		<!-- Toevoegen van CSS -->
-		<link rel="stylesheet" type="text/css" href="css/index.css">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+
 
 		<!-- Toevoegen van Font Awesome -->
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
@@ -66,15 +66,20 @@
 
 
 	<body>
-		<div class="">
-			<div class="app">
-				<h1>D&amp;D 5E</h1>
+		<div class="container center-align">
+			<img src="img/logo.png" alt="D&amp;D">
+			<div>
+				<h1>Version: 5E</h1>
 				<!-- NAVIGATIONMAIN PAGE -->
-				<div class="text-align-center">
-					<p><a class="waves-effect waves-light btn-small">Character Creation</a></p>
-					<p><a class="waves-effect waves-light btn-small">About us</a></p>
+				<div id="navHomeScreen">
+					<!-- BUTTONS -->
+					<p><a class="waves-effect waves-light btn-small" href="vieuw/characterCreation.html">Character Creation</a></p>
+					<p><a class="waves-effect waves-light btn-small" href="vieuw/diceRoller.html">Dice roller</a></p>
+					<p><a class="waves-effect waves-light btn-small" href="vieuw/aboutUs.html">About us</a></p>
 				</div>
 			</div>
+
+
 			<!-- Toevoegen van JS libs -->
 			<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 			<!-- Toevoegen van Materialize libs -->

@@ -41,6 +41,7 @@ body{
     background-attachment:fixed;
     font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
     padding-bottom: 10px;
+    height: 100vh;
 }
 
 h1 {
@@ -75,6 +76,24 @@ h3 {
 }
 .pb-5{
     padding-bottom: 5px;
+}
+.pb-10{
+    padding-bottom: 10px;
+}
+.mb-5{
+    margin-bottom: 5px;
+}
+.mb-10{
+    margin-bottom: 10px;
+}
+.mb-20{
+    margin-bottom: 20px;
+}
+.mb-25{
+    margin-bottom: 25px;
+}
+.mb-30{
+    margin-bottom: 30px;
 }
 
 .btn-small{
