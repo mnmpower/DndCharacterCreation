@@ -34,7 +34,7 @@
 		      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css"/>
 
 		<!-- Toevoegen van CSS -->
-		<link rel="stylesheet" type="text/css" href="/../css/style.css">
+		<link rel="stylesheet" type="text/css" href="../css/style.css">
 
 		<!-- Toevoegen van Font Awesome -->
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
@@ -66,27 +66,159 @@
 
 
 	<body>
+		<script>
 
-		<div class="">
-			<h1>D&amp;D 5E - About Us</h1>
-			<p><a class="waves-effect waves-light btn-small" href="../index.html" >Home</a></p>
+		</script>
+		<div class="container center-align">
+			<img src="../img/logo.png" alt="D&amp;D" class="">
+			<div class="col s12 ">
+				<h1 class="s4">Dice Roller</h1>
 
-		</div>
-		<div>
-			<!-- Toevoegen van JS libs -->
-			<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-			<!-- Toevoegen van Materialize libs -->
-			<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
-			<!-- Toevoegen van cordova -->
-			<script type="text/javascript" src="../cordova.js"></script>
-			<!-- JavaScript defer: https://www.w3schools.com/tags/att_script_defer.asp -->
+				<!-- Dice roller -->
 
-			<!-- Hier alle andere JS pagina's linken -->
-			<!-- ------------------START--------------- -->
+				<div class="row ">
 
 
-			<!-- -------------------END--------------- -->
-			<script type="text/javascript" src="../js/app.js"></script>
-		</div>
+					<!-- 1 REGEL VAN HIER D4 -->
+					<div class="col s12 row ml-10 center-align ">
+						<div class="input-field pl-15" id="rolld4">
+							<select class="browser-default col s2">
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+							</select>
+						</div>
+						<div class="col s2">
+							<i class="fas fa-dice-d6 fa-3x "></i>
+						</div>
+						<div class="col s8">
+							<input type="text" name="input4" id="input4">
+						</div>
+					</div>
+					<!-- TOT HIER -->
+
+
+					<!-- 1 REGEL VAN HIER D6 -->
+					<div class="col s12 row ml-10 center-align ">
+						<div class="input-field pl-15" id="rolld6">
+							<select class="browser-default col s2">
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+							</select>
+						</div>
+						<div class="col s2">
+							<i class="fas fa-dice-d6 fa-3x "></i>
+						</div>
+						<div class="col s8">
+							<input type="text" name="input6" id="input6">
+						</div>
+					</div>
+					<!-- TOT HIER -->
+
+					<!-- 1 REGEL VAN HIER D8 -->
+					<div class="col s12 row ml-10 center-align ">
+						<div class="input-field pl-15" id="rolld8">
+							<select class="browser-default col s2">
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+							</select>
+						</div>
+						<div class="col s2">
+							<i class="fas fa-dice-d6 fa-3x "></i>
+						</div>
+						<div class="col s8">
+							<input type="text" name="input8" id="input8">
+						</div>
+					</div>
+					<!-- TOT HIER -->
+
+					<!-- 1 REGEL VAN HIER D10 -->
+					<div class="col s12 row ml-10 center-align ">
+						<div class="input-field pl-15" id="rolld10">
+							<select class="browser-default col s2">
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+							</select>
+						</div>
+						<div class="col s2">
+							<i class="fas fa-dice-d6 fa-3x "></i>
+						</div>
+						<div class="col s8">
+							<input type="text" name="input10" id="input10">
+						</div>
+					</div>
+					<!-- TOT HIER -->
+
+					<!-- 1 REGEL VAN HIER D12 -->
+					<div class="col s12 row ml-10 center-align ">
+						<div class="input-field pl-15" id="rolld12">
+							<select class="browser-default col s2">
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+							</select>
+						</div>
+						<div class="col s2">
+							<i class="fas fa-dice-d6 fa-3x "></i>
+						</div>
+						<div class="col s8">
+							<input type="text" name="input12" id="input12">
+						</div>
+					</div>
+					<!-- TOT HIER -->
+
+					<!-- 1 REGEL VAN HIERD20 -->
+					<div class="col s12 row ml-10 center-align ">
+					<div class="input-field pl-15" id="rolld20">
+						<select class="browser-default col s2">
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+						</select>
+					</div>
+					<div class="col s2">
+						<i class="fas fa-dice-d20 fa-3x "></i>
+					</div>
+					<div class="col s8">
+						<input type="text" name="input20" id="input20">
+					</div>
+				</div>
+					<!-- TOT HIER -->
+
+
+
+					<!-- NAVIGATIONMAIN PAGE -->
+					<div id="navHomeScreen">
+						<!-- BUTTONS -->
+
+						<p class="mb-30"><a class="waves-effect waves-light btn-small" href="../index.html">home</a></p>
+					</div>
+				</div>
+
+
+				<!-- Toevoegen van JS libs -->
+				<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+				<!-- Toevoegen van Materialize libs -->
+				<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+				<!-- Toevoegen van cordova -->
+				<!--<script type="text/javascript" src="cordova.js"></script>-->
+				<!--&lt;!&ndash; JavaScript defer: https://www.w3schools.com/tags/att_script_defer.asp &ndash;&gt;-->
+
+				<!-- Hier alle andere JS pagina's linken -->
+				<!-- ------------------START--------------- -->
+				<script type="text/javascript" src="../js/materialize.js"></script>
+
+				<!-- -------------------END--------------- -->
+				<script type="text/javascript" src="../js/app.js"></script>
+			</div>
 	</body>
 </html>

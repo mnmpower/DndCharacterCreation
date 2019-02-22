@@ -27,12 +27,12 @@ body {
     background-color:#c62828   ;
 
     /*background-image: linear-gradient(RGB(87.8,87.8,87.8),RGB(77.6,15.7,15.7));*/
-    background-image: linear-gradient(top, #e0e0e0 0%, #c62828    51%);
-    background-image:-moz-linear-gradient(top, #e0e0e0 0%, #c62828    51%);
-    background-image:-webkit-linear-gradient(top, #e0e0e0 0%, #c62828    51%);
-    background-image:-o-linear-gradient(top, #e0e0e0 0%, #c62828    51%);
-    background-image:-ms-linear-gradient(top, #e0e0e0 0%, #c62828    51%);
-    background-image:-webkit-gradient(linear,left top,left bottom,color-stop(0, #e0e0e0),color-stop(0.51, #c62828));
+    background-image: linear-gradient(top, #750b11 0%, #c62828    51%);
+    background-image:-moz-linear-gradient(top, #750b11 0%, #c62828    51%);
+    background-image:-webkit-linear-gradient(top, #750b11 0%, #c62828    51%);
+    background-image:-o-linear-gradient(top, #750b11 0%, #c62828    51%);
+    background-image:-ms-linear-gradient(top, #750b11 0%, #c62828    51%);
+    background-image:-webkit-gradient(linear,left top,left bottom,color-stop(0, #750b11),color-stop(0.51, #c62828));
 
 }
 
