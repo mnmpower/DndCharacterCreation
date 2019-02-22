@@ -42,6 +42,7 @@ body{
     font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
     padding-bottom: 10px;
     height: 100vh;
+    min-width: 340px;
 }
 
 h1 {
@@ -70,9 +71,14 @@ h3 {
 .pl-10{
     padding-left: 10px;
 }
-
+.pl-15{
+    padding-left: 15px;
+}
 .pr-10{
     padding-right: 10px;
+}
+.pr-15{
+    padding-right: 15px;
 }
 .pb-5{
     padding-bottom: 5px;
@@ -95,7 +101,29 @@ h3 {
 .mb-30{
     margin-bottom: 30px;
 }
-
+.ml-10{
+    margin-left: 10px;
+}
+#rolld20, #rolld12, #rolld10, #rolld8, #rolld6, #rolld4{
+   width: 70%;
+}
+#input20, #input12,#input10, #input8 ,#input6, #input4,{
+    width: 95%;
+    float: left;
+}
+.smaller{
+    width: 90%;
+}
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-indent: 1px;
+    text-overflow: '';
+}
+.dropdown-content{
+    width: max-content !important;
+    height:auto !important;
+}
 .btn-small{
     width: 250px;
     text-align: center;
