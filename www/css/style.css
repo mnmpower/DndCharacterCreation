@@ -104,13 +104,14 @@ h3 {
 .ml-10{
     margin-left: 10px;
 }
-#rolld20, #rolld12, #rolld10, #rolld8, #rolld6, #rolld4{
+#rolld20Dropdown, #rolld12Dropdown, #rolld10Dropdown, #rolld08Dropdown, #rolld06Dropdown, #rolld04Dropdown{
    width: 70%;
 }
-#input20, #input12,#input10, #input8 ,#input6, #input4 {
+#input20, #input12,#input10, #input08 ,#input06, #input04 {
     width: 95%;
     float: left;
 }
+
 .smaller{
     width: 90%;
 }
