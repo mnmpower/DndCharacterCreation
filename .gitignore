@@ -1,0 +1,9 @@
+/.idea
+/node_modules
+/platforms
+
+package.json
+package-lock.json
+*.docx
+*.tmp
+*.zip
