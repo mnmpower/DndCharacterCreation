@@ -1,0 +1,280 @@
+{
+  "spells": {
+    "warlock": {
+      "lvl0": {
+        "test": {
+          "name": "",
+          "type": "",
+          "castingtime": null,
+          "range": null,
+          "concentration": false,
+          "ritual": false,
+          "components": {
+            "verbal": false,
+            "somatic": false,
+            "material": null
+          },
+          "duration": "",
+          "description": ""
+        },
+        "blade_ward": {
+          "name": "Blade Ward",
+          "type": "Abjuration",
+          "castingtime": 1,
+          "range": 0,
+          "concentration": false,
+          "ritual": false,
+          "components": {
+            "verbal": true,
+            "somatic": true,
+            "material": null
+          },
+          "duration": "1 round",
+          "description": "Tracing an arcane sigil in the air, you grant yourself resistance to bludgeoning, piercing, and slashing damage dealt by weapons until the end of your next turn."
+        },
+        "chill_touch": {
+          "name": "Chill Touch",
+          "type": "Necromancy",
+          "castingtime": 1,
+          "range": 120,
+          "concentration": false,
+          "ritual": false,
+          "components": {
+            "verbal": true,
+            "somatic": true,
+            "material": null
+          },
+          "duration": "Instantaneous",
+          "description": "You use your action to make a ghostly, skeletal hand that attempts to cling to a creature you can see within range. Make a ranged spell attack. On hit, the hand grabs the target, dealing 1d8 necrotic damage. The hand then remains there until the start of your next turn. During this time, the target is unable to regain hit points. If you hit an undead creature with this spell, it has disadvantage on attack rolls against you until the end of your next turn."
+        },
+        "eldritch_blast": {
+          "name": "Eldritch Blast",
+          "type": "Evocation",
+          "castingtime": 1,
+          "range": 120,
+          "concentration": false,
+          "ritual": false,
+          "components": {
+            "verbal": true,
+            "somatic": true,
+            "material": null
+          },
+          "duration": "Instantaneous",
+          "description": "You use your action to create a beam of magical energy and hurl it at a creature you can see within range. Make a ranged spell attack. On hit, the target takes 1d10 force damage."
+        },
+        "mage_hand": {
+          "name": "Mage Hand",
+          "type": "Conuration",
+          "castingtime": 1,
+          "range": 30,
+          "concentration": false,
+          "ritual": false,
+          "components": {
+            "verbal": true,
+            "somatic": true,
+            "material": null
+          },
+          "duration": "1 minute",
+          "description": "You use your action to create a spectral, floating hand at a point you choose. Once made, you can use your action to control the hand. It can move up to 30 feet at a time, but can't be more than 30 feet away from you or it will vanish. The hand is able to manipulate objects, open an unlocked door or container, put away or get an item out of an open container, or pour out a vial's contents. It can't attack, activate magic items, or carry more than 10 pounds. You use an action to dismiss the hand before the end of the duration."
+        },
+        "minor_illusion": {
+          "name": "Minor Illusion",
+          "type": "Illusion",
+          "castingtime": 1,
+          "range": 30,
+          "concentration": false,
+          "ritual": false,
+          "components": {
+            "verbal": false,
+            "somatic": true,
+            "material": "fleece"
+          },
+          "duration": "1 minute",
+          "description": "You create a sound or an image of an object that lasts for the duration. The illusion ends early if you dismiss it as an action or cast this spell again.\n\nIf you create a sound, it can be any volume and noise. The sound can continue unabated for the duration, or you can make sounds at different times.\n\nIf you create an image of an object, it must be no larger than a 5-foot cube. The image can't create any sensory effects. Physical interaction with the image reveals it to be an illusion.\n\nA creature can use its action to make an Investigation check on the illusion. If it succeeds, the illusion becomes faint to it."
+        },
+        "poison_spray": {
+          "name": "Poison Spray",
+          "type": "Conjuration",
+          "castingtime": 1,
+          "range": 10,
+          "concentration": false,
+          "ritual": false,
+          "components": {
+            "verbal": true,
+            "somatic": true,
+            "material": null
+          },
+          "duration": "Instantaneous",
+          "description": "You throw a puff of poisonous gas at a creature you can see, forcing them to pass a Constitution save or take 1d12 poison damage."
+        },
+        "prestidigitation": {
+          "name": "Prestidigitation",
+          "type": "Transmutation",
+          "castingtime": 1,
+          "range": 10,
+          "concentration": false,
+          "ritual": false,
+          "components": {
+            "verbal": true,
+            "somatic": true,
+            "material": null
+          },
+          "duration": "Instantaneous",
+          "description": "You create one of the following effects:\n\n    You create a harmless sensory effect.\n    You light or put out a small fire.\n    You clean or soil an object no larger than 1 cubic foot.\n    You chill, warm, or flavor up to 1 cubic foot of nonliving material for 1 hour.\n    You make a small mark appear on an object or surface for 1 hour.\n    You create a nonmagical trinket or a hand-sized illusory image. It lasts until the end of your next turn. \n\nIf you cast this spell multiple times, you can have up to three of its non-instantaneous effects active at a time, and you can dismiss an effect as an action."
+        },
+        "true_strike": {
+          "name": "True Strike",
+          "type": "Divination",
+          "castingtime": 1,
+          "range": 30,
+          "concentration": true,
+          "ritual": false,
+          "components": {
+            "verbal": false,
+            "somatic": true,
+            "material": null
+          },
+          "duration": "1 round",
+          "description": "On your next turn, your first attack roll on the target has advantage."
+        }
+      },
+      "lvl1:": {
+        "arms_of_hadar": {
+          "name": "Arms Of Hadar",
+          "type": "Conjuration",
+          "castingtime": 1,
+          "range": 0,
+          "concentration": false,
+          "ritual": false,
+          "components": {
+            "verbal": true,
+            "somatic": true,
+            "material": null
+          },
+          "duration": "Instantaneous",
+          "description": "Tendrils batter all creatures within 10 feet of you. They must make a Strength save. On a fail, a target takes 2d6 necrotic damage and can't take reactions until its next turn. On a success, it takes half damage and suffers no other effects."
+        },
+        "charm_person": {
+          "name": "Charm Person",
+          "type": "Enchantment",
+          "castingtime": 1,
+          "range": 30,
+          "concentration": false,
+          "ritual": false,
+          "components": {
+            "verbal": true,
+            "somatic": true,
+            "material": null
+          },
+          "duration": "1 hour",
+          "description": ""
+        },
+        "comprehend_languages": {
+          "name": "Comprehend Languages",
+          "type": "Divination",
+          "castingtime": 1,
+          "range": 0,
+          "concentration": false,
+          "ritual": true,
+          "components": {
+            "verbal": true,
+            "somatic": true,
+            "material": "soot, salt"
+          },
+          "duration": "1 hour",
+          "description": "You understand any spoken language that you hear while the spell lasts. While touching the surface where words are written, you can also understand any written language you see. One page of text can be read in approximately 1 minute.\n\nSecret codes in text and glyphs that aren't part of any written language can't be decoded with this spell."
+        },
+        "expeditious_retreat": {
+          "name": "Expeditious Retreat",
+          "type": "Transmutation",
+          "castingtime": 2,
+          "range": 0,
+          "concentration": true,
+          "ritual": false,
+          "components": {
+            "verbal": true,
+            "somatic": true,
+            "material": null
+          },
+          "duration": "10 minutes",
+          "description": "When you cast this spell, and as a bonus action on your turns, you can take the Dash action."
+        },
+        "hellish_rebuke": {
+          "name": "Hellish Rebuke",
+          "type": "Evocation",
+          "castingtime": 3,
+          "range": 60,
+          "concentration": false,
+          "ritual": false,
+          "components": {
+            "verbal": true,
+            "somatic": true,
+            "material": null
+          },
+          "duration": "Instantaneous",
+          "description": "A creature you can see that damaged you must make a Dexterity save. It takes 2d10 fire damage on a failed save, or half as much on a success."
+        },
+        "illusory_script": {
+          "name": "Illusory Script",
+          "type": "Illusion",
+          "castingtime": "1 minute",
+          "range": 0,
+          "concentration": false,
+          "ritual": true,
+          "components": {
+            "verbal": false,
+            "somatic": true,
+            "material": "10gp lead ink; consumed"
+          },
+          "duration": "10 days",
+          "description": "You write on suitable writing material and imbue it with an illusion that lasts for the duration.\n\nTo you and any creatures you designate when you cast the spell, the writing appears normal, written in your hand, and conveys whatever meaning you intended when you wrote the text. To all others, the writing is unintelligible. Alternatively, you can cause the writing to appear to be an entirely different message, written in a different hand and language, though the language must be one you know.\n\nIf the spell is dispelled, the original script and the illusion disappear.\n\nA creature with truesight can read the hidden message. "
+        },
+        "protection_from_evil_and_good": {
+          "name": "Protection from Evil and Good",
+          "type": "Abjuration",
+          "castingtime": 1,
+          "range": 0,
+          "concentration": true,
+          "ritual": false,
+          "components": {
+            "verbal": true,
+            "somatic": true,
+            "material": "holy water/powdered silver and iron; consumed"
+          },
+          "duration": "10 minutes",
+          "description": "One willing creature you touch is protected against aberrations, celestials, elementals, fey, fiends, and undead. Creatures of those types have disadvantage on attack rolls against the target. The target also can't be charmed, frightened, or possessed by them. If the target already has such an effect by one of them, the target has advantage on any new saving throw against it."
+        },
+        "unseen_servant": {
+          "name": "Unseen Servant",
+          "type": "Conjuration",
+          "castingtime": 1,
+          "range": 60,
+          "concentration": false,
+          "ritual": true,
+          "components": {
+            "verbal": true,
+            "somatic": true,
+            "material": "string, wood"
+          },
+          "duration": "1 hour",
+          "description": "This spell creates an invisible force that performs tasks at your command until the spell ends.\n\nIt has an AC of 10, 1 hit point, and a Strength of 2, and it can't attack. If it drops to 0 hit points, the spell ends. Once on each of your turns, as a bonus action, you can mentally command the servant to move up to 15 feet and interact with an object.\n\nThe servant can perform simple tasks that a human servant could do.\n\nOnce you give the command, the servant performs the task to the best of its ability until it completes the task, then waits for your next command. If you command the servant to perform a task that would move it more than 60 feet away from you, the spell ends."
+        },
+        "witch_bolt": {
+          "name": "Witch Bolt",
+          "type": "Evocation",
+          "castingtime": 1,
+          "range": 30,
+          "concentration": true,
+          "ritual": false,
+          "components": {
+            "verbal": true,
+            "somatic": true,
+            "material": "twig struck by lightning"
+          },
+          "duration": "1 minute",
+          "description": "Make a ranged spell attack against a creature you can see. On a hit, the target takes 1d12 lightning damage, and on your turn, you can use your action to deal 1d12 lightning damage to the target. The spell ends if you use your action to do anything else. The spell also ends if the target is ever outside the spell's range or if it has total cover from you."
+        }
+      }
+    }
+  }
+}
