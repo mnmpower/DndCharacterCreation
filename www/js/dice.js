@@ -1,18 +1,3 @@
-var Dice = function () {
-    var init = function () {
-        console.log('dice funtion rolls started');
-        //DICE ROLLING
-        //
-        //START
-
-        //STOP
-
-    };
-    return {
-        init: init
-    };
-}();
-
 $( document ).ready(function() {
     console.log('dice funtion rolls started');
 
