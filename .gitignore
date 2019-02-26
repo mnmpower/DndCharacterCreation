@@ -4,6 +4,8 @@
 
 package.json
 package-lock.json
+config.xml
 *.docx
 *.tmp
 *.zip
+
