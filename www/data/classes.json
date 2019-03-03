@@ -1,6 +1,7 @@
 {
   "Barbarian": {
-    "Class Features": {
+    "ClassFeatures": {
+      "FightingStyle" :"Melee",
       "content": "As a barbarian, you gain the following class features.",
       "Hit Points": {
         "content": [
@@ -203,7 +204,8 @@
     }
   },
   "Bard": {
-    "Class Features": {
+    "ClassFeatures": {
+      "FightingStyle" :"Specialist",
       "content": "As a bard, you gain the following class features.",
       "Hit Points": {
         "content": [
@@ -625,7 +627,8 @@
     }
   },
   "Cleric": {
-    "Class Features": {
+    "ClassFeatures": {
+      "FightingStyle" :"Spellcaster",
       "content": "As a cleric, you gain the following class features.",
       "Hit Points": {
         "content": [
@@ -1060,7 +1063,8 @@
     }
   },
   "Druid": {
-    "Class Features": {
+    "ClassFeatures": {
+      "FightingStyle" :"Specialist",
       "content": "As a druid, you gain the following class features.",
       "Hit Points": {
         "content": [
@@ -1610,7 +1614,8 @@
     }
   },
   "Fighter": {
-    "Class Features": {
+    "ClassFeatures": {
+      "FightingStyle" :"Melee",
       "content": "As a fighter, you gain the following class features.",
       "Hit Points": {
         "content": [
@@ -1759,7 +1764,8 @@
     }
   },
   "Monk": {
-    "Class Features": {
+    "ClassFeatures": {
+      "FightingStyle" :"Melee",
       "content": "As a monk, you gain the following class features.",
       "Hit Points": {
         "content": [
@@ -2012,7 +2018,8 @@
     }
   },
   "Paladin": {
-    "Class Features": {
+    "ClassFeatures": {
+      "FightingStyle" :"Melee",
       "content": "As a paladin, you gain the following class features.",
       "Hit Points": {
         "content": [
@@ -2375,7 +2382,8 @@
     }
   },
   "Ranger": {
-    "Class Features": {
+    "ClassFeatures": {
+      "FightingStyle" :"Specialist",
       "content": "As a ranger, you gain the following class features.",
       "Hit Points": {
         "content": [
@@ -2724,7 +2732,8 @@
     }
   },
   "Rogue": {
-    "Class Features": {
+    "ClassFeatures": {
+      "FightingStyle" :"Specialist",
       "content": "As a rogue, you have the following class features.",
       "Hit Points": {
         "content": [
@@ -2896,7 +2905,8 @@
     }
   },
   "Sorcerer": {
-    "Class Features": {
+    "ClassFeatures": {
+      "FightingStyle" :"Spellcaster",
       "content": "As a sorcerer, you gain the following class features.",
       "Hit Points": {
         "content": [
@@ -3415,7 +3425,8 @@
     }
   },
   "Warlock": {
-    "Class Features": {
+    "ClassFeatures": {
+      "FightingStyle" :"Spellcaster",
       "content": "As a warlock, you gain the following class features.",
       "Hit Points": {
         "content": [
@@ -3886,7 +3897,8 @@
     }
   },
   "Wizard": {
-    "Class Features": {
+    "ClassFeatures": {
+      "FightingStyle" :"Spellcaster",
       "content": "As a wizard, you gain the following class features.",
       "Hit Points": {
         "content": [

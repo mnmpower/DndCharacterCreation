@@ -153,6 +153,11 @@ select {
     width:100%;
 }
 
+.collapsible.expandable{
+    width: 100vw;
+    border: none;
+}
+
 @media screen and (min-width:350px) {
     .container{
         margin-top: 20px;

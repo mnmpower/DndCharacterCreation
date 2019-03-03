@@ -69,102 +69,75 @@
 			<div>
 				<h1>Character Creation</h1>
 				<!-- NAVIGATIONMAIN PAGE -->
-				<div>
-					<!-- ACCORDEAN -->
-					<ul class="collapsible expandable">
-						<li>
-							<div class="collapsible-header">Select Fighting Style</div>
-							<div class="collapsible-body">
 
-								<!-- TABS HIER PLAATSEN -->
+			</div>
+		</div>
+		<div>
+			<!-- ACCORDEAN -->
+			<ul class="collapsible expandable">
+				<li>
+					<div class="collapsible-header">Select Fighting Style</div>
+					<div class="collapsible-body">
 
-								<div class="row">
-									<div class="col s12">
-										<ul class="tabs">
-											<li class="tab col s4"><a href="#Melee">Melee</a></li>
-											<li class="tab col s4"><a href="#Caster">Caster</a></li>
-											<li class="tab col s4"><a href="#Specialist">Specialist</a></li>
-										</ul>
-									</div>
-									<div id="Melee" class="col s12">11111111111111111111
-									</div>
-									<div id="Caster" class="col s12">2222222222222222222222222222
-									</div>
-									<div id="Specialist" class="col s12">Lorem ipsum dolor sit amet, consectetur
-										adipisicing elit. At eveniet odio repellendus saepe veniam. Animi ea est hic
-										ipsum itaque labore provident quas quo tempora, tempore. Autem optio quia sequi.
-									</div>
-								</div>
+						<!-- TABS HIER PLAATSEN -->
 
+						<div class="row">
+							<div class="col s12">
+								<ul class="tabs" id="fightingStyleList">
+									<li class="tab col "><a href="#Melee" class="selectFightingStyle ">Melee</a></li>
+									<li class="tab col "><a href="#Caster" class="selectFightingStyle ">Spellcaster</a></li>
+									<li class="tab col "><a href="#Specialist" class="selectFightingStyle ">Specialist</a></li>
+								</ul>
 							</div>
+							<div id="Melee" class="col s12">Melee characters engage in up-close, hand to hand
+								combat.<br><br>
+								Choose this style if you want to attack with weapons instead of magic.
+							</div>
+							<div id="Caster" class="col s12">Spellcasters harness the power of magic to assist allies
+								or attack their enemies from a distance. <br>
+								<br>Choose this style if you want to use magic more than weapons.
+							</div>
+							<div id="Specialist" class="col s12">Specialists can excel in scouting, ranged combat, trap
+								disarming and more. <br>
+								<br>Choose this style if you prefer a more specialized role.
+							</div>
+						</div>
+						<!-- EINDE TABS -->
 
-						</li>
-						<li>
-							<div class="collapsible-header">Select Class</div>
-							<div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-						</li>
-						<li>
-							<div class="collapsible-header">Select Race</div>
-							<div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-						</li>
-					</ul>
+					</div>
+
+				</li>
+				<li>
+					<div class="collapsible-header classSelection">Select Class</div>
+					<div class="collapsible-body">
+						<!-- TABS HIER PLAATSEN -->
+
+						<div class="row">
+							<div class="col s12">
+								<ul class="tabs">
+									<li class="tab"><a href="#class1uitleg" id="class1"></a></li>
+									<li class="tab"><a href="#class2uitleg" id="class2"></a></li>
+									<li class="tab"><a href="#class3uitleg" id="class3"></a></li>
+									<li class="tab"><a href="#class4uitleg" id="class4"></a></li>
+								</ul>
+							</div>
+							<div id="class1uitleg" class="col s12"></div>
+							<div id="class2uitleg" class="col s12"></div>
+							<div id="class3uitleg" class="col s12"></div>
+							<div id="class4uitleg" class="col s12"></div>
+						</div>
+						<!-- EINDE TABS -->
+					</div>
+				</li>
+				<li>
+					<div class="collapsible-header">Select Race</div>
+					<div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+				</li>
+			</ul>
 
 
-					<!-- TEST START -->
-					<!--<ul class="collapsible popout" data-collapsible="accordion">-->
-					<!--<li>-->
-					<!--<div class="collapsible-header active"><i class="material-icons"></i>First</div>-->
-					<!--<div class="collapsible-body">-->
-					<!--<p>-->
-
-					<!--<div class="row">-->
-					<!--<div class="col s12">-->
-					<!--<ul class="tabs">-->
-					<!--<li class="tab col s3"><a href="#test1">Test 1</a></li>-->
-					<!--<li class="tab col s3"><a class="active" href="#test2">Test 2</a></li>-->
-					<!--<li class="tab col s3 disabled"><a href="#test3">Disabled Tab</a></li>-->
-					<!--<li class="tab col s3"><a href="#test4">Test 4</a></li>-->
-					<!--</ul>-->
-					<!--</div>-->
-					<!--<div id="test1" class="col s12">Test 1</div>-->
-					<!--<div id="test2" class="col s12">Test 2</div>-->
-					<!--<div id="test3" class="col s12">Test 3</div>-->
-					<!--<div id="test4" class="col s12">Test 4</div>-->
-					<!--</div>-->
-
-					<!--</p>-->
-					<!--</div>-->
-					<!--</li>-->
-					<!--<li>-->
-					<!--<div class="collapsible-header"><i class="material-icons"></i>Second</div>-->
-					<!--<div class="collapsible-body">-->
-					<!--<p>-->
-
-					<!--<div class="row">-->
-					<!--<div class="col s12">-->
-					<!--<ul class="tabs">-->
-					<!--<li class="tab col s3"><a href="#testA">Test A</a></li>-->
-					<!--<li class="tab col s3"><a class="active" href="#testB">Test B</a></li>-->
-					<!--<li class="tab col s3 disabled"><a href="#testC">Disabled Tab</a></li>-->
-					<!--<li class="tab col s3"><a href="#testD">Test D</a></li>-->
-					<!--</ul>-->
-					<!--</div>-->
-					<!--<div id="testA" class="col s12">Test A</div>-->
-					<!--<div id="testB" class="col s12">Test B</div>-->
-					<!--<div id="testC" class="col s12">Test C</div>-->
-					<!--<div id="testD" class="col s12">Test D</div>-->
-					<!--</div>-->
-
-					<!--</p>-->
-					<!--</div>-->
-					<!--</li>-->
-					<!--<li>-->
-					<!--<div class="collapsible-header"><i class="material-icons"></i>Third</div>-->
-					<!--<div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>-->
-					<!--</li>-->
-					<!--</ul>-->
-
-					<!-- TEST END -->
+			<div class="container center-align">
+				<div>
 
 					<!-- BUTTONS -->
 
@@ -185,7 +158,7 @@
 			<!-- Toevoegen van Materialize libs -->
 			<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
 			<!-- Toevoegen van cordova -->
-			<script type="text/javascript" src="../cordova.js"></script>
+			<script type="text/javascript" src="../js/cordova.js"></script>
 			<!-- JavaScript defer: https://www.w3schools.com/tags/att_script_defer.asp -->
 
 			<!-- Hier alle andere JS pagina's linken -->
