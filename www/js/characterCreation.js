@@ -21,7 +21,8 @@ $(document).ready(function () {
     var spellcaster=[];
 
     sortClassByStyle(classNames,json,melee,specialist,spellcaster);
-    leesTab2In(melee,specialist,spellcaster);
+    leesTab2In(json,melee,specialist,spellcaster);
+
 
 });
 
@@ -60,7 +61,7 @@ function sortClassByStyle(classNames,json,melee,specialist,spellcaster) {
     console.log(spellcaster);
 }
 
-function leesTab2In(melee,specialist,spellcaster) {
+function leesTab2In(json,melee,specialist,spellcaster) {
     $('a.selectFightingStyle').click(function () {
         var selectedType = $(this).text();
         var tabs2titles = [];
@@ -84,7 +85,7 @@ function leesTab2In(melee,specialist,spellcaster) {
         //inlezen tabs
         for (var i = 0; i < tabs2titles.length; i++) {
             $('#class'+(i+1)).html(tabs2titles[i]);
-
+            $('#class'+(i+1)+"uitleg").html(json[tabs2titles[i]]["ClassFeatures"]["Class Description"]);
             console.log(tabs2titles[i]);
         }
     });

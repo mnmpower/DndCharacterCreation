@@ -1,7 +1,8 @@
 {
   "Barbarian": {
     "ClassFeatures": {
-      "FightingStyle" :"Melee",
+      "FightingStyle": "Melee",
+      "Class Description": "Barbarians possess incredible strength and offensive power. They are not as well armored as fighters, but they can absorb damage and go into a battle rage to overwhelm their eneies.",
       "content": "As a barbarian, you gain the following class features.",
       "Hit Points": {
         "content": [
@@ -205,7 +206,8 @@
   },
   "Bard": {
     "ClassFeatures": {
-      "FightingStyle" :"Specialist",
+      "FightingStyle": "Specialist",
+      "Class Description": "Bards use spells, skills, and make music. They are the ultimate support characters, simultaneously strengthening friends and weakening foes.",
       "content": "As a bard, you gain the following class features.",
       "Hit Points": {
         "content": [
@@ -628,7 +630,8 @@
   },
   "Cleric": {
     "ClassFeatures": {
-      "FightingStyle" :"Spellcaster",
+      "FightingStyle": "Spellcaster",
+      "Class Description": "Divine spells casters and healers, Clerics have a broad range of spells at their command.They excel at curing ailments and healing allies but also have the ability to blast enemies with their divine power.",
       "content": "As a cleric, you gain the following class features.",
       "Hit Points": {
         "content": [
@@ -1064,7 +1067,8 @@
   },
   "Druid": {
     "ClassFeatures": {
-      "FightingStyle" :"Specialist",
+      "FightingStyle": "Specialist",
+      "Class Description": "Powerful spells and shape changing. Druids have a large variety of divine spells and can change into various animal forms to change the role they play in a group",
       "content": "As a druid, you gain the following class features.",
       "Hit Points": {
         "content": [
@@ -1615,7 +1619,8 @@
   },
   "Fighter": {
     "ClassFeatures": {
-      "FightingStyle" :"Melee",
+      "FightingStyle": "Melee",
+      "Class Description": "Fighters can use a large variety of weapons, all types of shields, and the heaviest armor. They can also train in many more combat abilities than the other melee classes.",
       "content": "As a fighter, you gain the following class features.",
       "Hit Points": {
         "content": [
@@ -1765,7 +1770,8 @@
   },
   "Monk": {
     "ClassFeatures": {
-      "FightingStyle" :"Melee",
+      "FightingStyle": "Melee",
+      "Class Description": "Monks use an energy called ki to perform amazing techniques in battle. Usually fighting without weapon and armor, they can assist allies or destroy enemies but they take lnger to master than other melee classes.",
       "content": "As a monk, you gain the following class features.",
       "Hit Points": {
         "content": [
@@ -2019,7 +2025,8 @@
   },
   "Paladin": {
     "ClassFeatures": {
-      "FightingStyle" :"Melee",
+      "FightingStyle": "Melee",
+      "Class Description": "Paladins  are supremely resilient and have a good balance of offense and defence. They protect and support allies better than the other melee classes, provide some healing, and wield the power of good as a mighty weapon.",
       "content": "As a paladin, you gain the following class features.",
       "Hit Points": {
         "content": [
@@ -2383,7 +2390,8 @@
   },
   "Ranger": {
     "ClassFeatures": {
-      "FightingStyle" :"Specialist",
+      "FightingStyle": "Specialist",
+      "Class Description": "Rangers are exremely versatile combatants. They can act as scouts, can wield two weapons at once, and are lethal with a bow.",
       "content": "As a ranger, you gain the following class features.",
       "Hit Points": {
         "content": [
@@ -2733,7 +2741,8 @@
   },
   "Rogue": {
     "ClassFeatures": {
-      "FightingStyle" :"Specialist",
+      "FightingStyle": "Specialist",
+      "Class Description": "Rogues use stealth and a variety of masterfull techniquesto disarm traps, unlock doors, and take down enemies with devestating sneak attacks.",
       "content": "As a rogue, you have the following class features.",
       "Hit Points": {
         "content": [
@@ -2906,7 +2915,8 @@
   },
   "Sorcerer": {
     "ClassFeatures": {
-      "FightingStyle" :"Spellcaster",
+      "FightingStyle": "Spellcaster",
+      "Class Description": "Sorcerers are born with the ability to use powerful magic. They have fewer spells than wizards but can cast more often ",
       "content": "As a sorcerer, you gain the following class features.",
       "Hit Points": {
         "content": [
@@ -3426,7 +3436,8 @@
   },
   "Warlock": {
     "ClassFeatures": {
-      "FightingStyle" :"Spellcaster",
+      "FightingStyle": "Spellcaster",
+      "Class Description": "Warlocks make pacts with otherworldly beings to ain power and might. This relationship between warlock and patron is somewhat like that of a cleric and deity, but beings thatserve as patrons for warlocks are no gods.",
       "content": "As a warlock, you gain the following class features.",
       "Hit Points": {
         "content": [
@@ -3898,7 +3909,8 @@
   },
   "Wizard": {
     "ClassFeatures": {
-      "FightingStyle" :"Spellcaster",
+      "FightingStyle": "Spellcaster",
+      "Class Description": "Wizards can learn a huge variety of spells and can fine tune their spell list to the task. They can assist the party or destory the opponents with the power of the elements.",
       "content": "As a wizard, you gain the following class features.",
       "Hit Points": {
         "content": [
