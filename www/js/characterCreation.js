@@ -21,7 +21,12 @@ $(document).ready(function () {
     var spellcaster=[];
 
     sortClassByStyle(classNames,jsonclasses,melee,specialist,spellcaster);
-    leesClassTabIn(jsonclasses,melee,specialist,spellcaster);
+
+    $('a.selectFightingStyle').click(function () {
+        var selectedType = $(this).text();
+        leesClassTabIn(jsonclasses,melee,specialist,spellcaster,selectedType);
+    });
+
 
 
     //alles met de RACES
@@ -30,6 +35,7 @@ $(document).ready(function () {
 
     var raceNames = Object.keys(jsonRaces);
     console.log(raceNames);
+
     leesRaceTabsIn(raceNames,jsonRaces);
 
     var gekozenRace="Human";
@@ -84,35 +90,55 @@ function sortClassByStyle(classNames,jsonclasses,melee,specialist,spellcaster) {
     console.log(spellcaster);
 }
 
-function leesClassTabIn(jsonclasses,melee,specialist,spellcaster) {
-    $('a.selectFightingStyle').click(function () {
-        var selectedType = $(this).text();
-        var tabstitles = [];
-        console.log(selectedType);
-        //nakijken welke tab geklikt is + jusite date doorgeven
-        switch (selectedType) {
-            case "Specialist":
-                tabstitles = specialist;
-                break;
+function leesClassTabIn(jsonclasses,melee,specialist,spellcaster,selectedType) {
+    var tabstitles = [];
+    console.log(selectedType);
+    //nakijken welke tab geklikt is + jusite date doorgeven
+    switch (selectedType) {
+        case "Specialist":
+            tabstitles = specialist;
+            break;
 
-            case "Spellcaster":
-                tabstitles = spellcaster;
-                break;
+        case "Spellcaster":
+            tabstitles = spellcaster;
+            break;
 
-            default:
-                tabstitles = melee;
-                break;
-        }
-        console.log(tabstitles);
+        default:
+            tabstitles = melee;
+            break;
+    }
+    console.log(tabstitles);
 
-        //inlezen tabs
-        for (var i = 0; i < tabstitles.length; i++) {
-            $('#class'+(i+1)).html(tabstitles[i]);
-            $('#class'+(i+1)+"uitleg").html(jsonclasses[tabstitles[i]]["ClassFeatures"]["Class Description"]);
-            console.log(tabstitles[i]);
-        }
-    });
+    // //inlezen tabs
+    // for (var i = 0; i < tabstitles.length; i++) {
+    //     $('#class'+(i+1)).html(tabstitles[i]);
+    //     $('#class'+(i+1)+"uitleg").html(jsonclasses[tabstitles[i]]["ClassFeatures"]["Class Description"]);
+    //     console.log(tabstitles[i]);
+    // }
+    var resultaat="<div class=\"col s12\">\n<ul class=\"tabs\">\n";
+
+    for (var i = 0; i < tabstitles.length; i++) {
+
+        resultaat+="<li class=\"tab\"><a href=\"#class"+(i+1)+"uitleg\" id=\"class"+(i+1)+"\" class='class'>"+tabstitles[i]+"</a></li>\n";
+
+    }
+
+    resultaat+="</ul></div>";
+
+    for (var i = 0; i < tabstitles.length; i++) {
+
+        resultaat+="<div id=\"class"+(i+1)+"uitleg\" class=\"col s12\">"+jsonclasses[tabstitles[i]]["ClassFeatures"]["Class Description"]+"</div>\n\n";
+    }
+    resultaat+="</div>";
+    console.log(resultaat);
+    $('div.tabsClassesAfdrukken').html(resultaat);
+
+    let el = $('.tabs');
+    let instanceTabs = M.Tabs.init(el, {});
+
 }
+
+
 //werkt perfect maar ff test
 // function leesRaceTabsIn(racenames,jsonRaces) {
 //     for (var i = 1; i <= racenames.length; i++) {
@@ -135,13 +161,50 @@ function leesRaceTabsIn(racenames,jsonRaces) {
 
     resultaat+="</ul></div>";
 
+    // for (var i = 1; i < racenames.length; i++) {
+    //
+    //     resultaat+="<div id=\"race"+i+"uitleg\" class=\"col s12\">"+jsonRaces[racenames[i]][racenames[i]+" Traits"]["content"]+"</div>\n\n";
+    // }
+
     for (var i = 1; i < racenames.length; i++) {
 
-        resultaat+="<div id=\"race"+i+"uitleg\" class=\"col s12\">"+jsonRaces[racenames[i]][racenames[i]+" Traits"]["content"]+"</div>\n\n";
+        resultaat+="<div id=\"race"+i+"uitleg\" class=\"col s12\">";
+
+        for (var j = 1; j < jsonRaces[racenames[i]][racenames[i]+" Traits"]["content"].length; j++) {
+            var content = jsonRaces[racenames[i]][racenames[i]+" Traits"].content[j];
+
+            if (typeof content === "string"){
+                if (content.includes('*') === true){
+                    var content1 = content.replace("***","<h2>");
+                    var content2 = content1.replace("***","</h2>");
+                    var content3 = content2.replace(".","");
+
+                    // console.log(content3);
+                    resultaat+="<p>"+content3+"</p>";
+                }
+            }else if (typeof content === "object" && content["table"]["**Dragon**"] != null) {
+
+                console.log(Object.keys(content.table));
+
+                dragonTableKeys =Object.keys(content.table);
+                var table ="<table>";
+                for (var k = 0; k < dragonTableKeys[0].length; k++){
+                        table += "<tr><td>"+content["table"][dragonTableKeys[0]][k]+"</td>";
+                        table += "<td>"+content["table"][dragonTableKeys[1]][k]+"</td>";
+                        table += "<td>"+content["table"][dragonTableKeys[2]][k]+"</td></tr>";
+                }
+                table +="</table>";
+                resultaat+=table;
+            }
+        }
+        resultaat+="</div>\n\n";
     }
+
+
     resultaat+="</div>";
     console.log(resultaat);
     $('div.tabsRacesAfdrukken').html(resultaat);
+
 }
 
 

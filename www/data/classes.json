@@ -1067,7 +1067,7 @@
   },
   "Druid": {
     "ClassFeatures": {
-      "FightingStyle": "Specialist",
+      "FightingStyle": "Spellcaster",
       "Class Description": "Powerful spells and shape changing. Druids have a large variety of divine spells and can change into various animal forms to change the role they play in a group",
       "content": "As a druid, you gain the following class features.",
       "Hit Points": {
@@ -1771,7 +1771,7 @@
   "Monk": {
     "ClassFeatures": {
       "FightingStyle": "Melee",
-      "Class Description": "Monks use an energy called ki to perform amazing techniques in battle. Usually fighting without weapon and armor, they can assist allies or destroy enemies but they take lnger to master than other melee classes.",
+      "Class Description": "Monks use an energy called ki to perform amazing techniques in battle. Usually fighting without weapon and armor, they can assist allies or destroy enemies but they take longer to master than other melee classes.",
       "content": "As a monk, you gain the following class features.",
       "Hit Points": {
         "content": [
