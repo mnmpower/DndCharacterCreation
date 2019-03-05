@@ -25,6 +25,14 @@ $(document).ready(function () {
     $('a.selectFightingStyle').click(function () {
         var selectedType = $(this).text();
         leesClassTabIn(jsonclasses,melee,specialist,spellcaster,selectedType);
+
+        $('a.class').click(function () {
+            gekozenClass = $(this).text();
+            console.log(gekozenRace);
+            console.log(gekozenClass);
+            $('#gekozenClass').html("Class: "+gekozenClass);
+            $('#gekozenRace').html("Race: "+gekozenRace);
+        });
     });
 
 
@@ -41,18 +49,22 @@ $(document).ready(function () {
     var gekozenRace="Human";
     var gekozenClass="Barbarian";
 
-    $('.race').click(function () {
+    $('a.race').click(function () {
         gekozenRace = $(this).text();
         console.log(gekozenRace);
         console.log(gekozenClass);
+        $('#gekozenClass').html("Class: "+gekozenClass);
+        $('#gekozenRace').html("Race: "+gekozenRace);
     });
-    $('.class').click(function () {
-        gekozenClass = $(this).text();
-        console.log(gekozenRace);
-        console.log(gekozenClass);
-    });
+
+
+
     console.log(gekozenRace);
     console.log(gekozenClass);
+
+    $('#gekozenClass').html("Class: "+gekozenClass);
+    $('#gekozenRace').html("Race: "+gekozenRace);
+
 });
 
 function leesJsonIn(url) {
@@ -127,10 +139,10 @@ function leesClassTabIn(jsonclasses,melee,specialist,spellcaster,selectedType) {
 
     for (var i = 0; i < tabstitles.length; i++) {
 
-        resultaat+="<div id=\"class"+(i+1)+"uitleg\" class=\"col s12\">"+jsonclasses[tabstitles[i]]["ClassFeatures"]["Class Description"]+"</div>\n\n";
+        resultaat+="<p id=\"class"+(i+1)+"uitleg\" class=\"col s12 justify-text\">"+jsonclasses[tabstitles[i]]["ClassFeatures"]["Class Description"]+"</p>\n\n";
     }
     resultaat+="</div>";
-    console.log(resultaat);
+    // console.log(resultaat);
     $('div.tabsClassesAfdrukken').html(resultaat);
 
     let el = $('.tabs');
@@ -175,16 +187,20 @@ function leesRaceTabsIn(racenames,jsonRaces) {
 
             if (typeof content === "string"){
                 if (content.includes('*') === true){
-                    var content1 = content.replace("***","<h2>");
-                    var content2 = content1.replace("***","</h2>");
-                    var content3 = content2.replace(".","");
+                    var index = content.lastIndexOf('*')+1;
+                    var title = content.substr(0,index);
+                    var rest = content.substr(index);
+
+                    var title1 = title.replace("***","<h2>");
+                    var title2 = title1.replace("***","</h2>");
+                    var title3 = title2.replace(".","");
 
                     // console.log(content3);
-                    resultaat+="<p>"+content3+"</p>";
+                    resultaat+= title3+"<p class='justify-text'>"+rest+"</p>";
                 }
             }else if (typeof content === "object" && content["table"]["**Dragon**"] != null) {
 
-                console.log(Object.keys(content.table));
+                // console.log(Object.keys(content.table));
 
                 dragonTableKeys =Object.keys(content.table);
                 var table ="<table>";
@@ -202,7 +218,7 @@ function leesRaceTabsIn(racenames,jsonRaces) {
 
 
     resultaat+="</div>";
-    console.log(resultaat);
+    // console.log(resultaat);
     $('div.tabsRacesAfdrukken').html(resultaat);
 
 }
