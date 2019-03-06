@@ -9,6 +9,9 @@
   "installed_plugins": {
     "cordova-plugin-splashscreen": {
       "PACKAGE_NAME": "be.webreggers.dndCharacterCreation"
+    },
+    "phonegap-plugin-barcodescanner": {
+      "PACKAGE_NAME": "be.webreggers.dndCharacterCreation"
     }
   },
   "dependent_plugins": {}
