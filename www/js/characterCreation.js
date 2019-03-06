@@ -10,7 +10,8 @@ $(document).ready(function () {
         }
     });
     //alles met de CLASSES
-    var jsonclasses = leesJsonIn("../data/classes.json");
+    // var jsonclasses = leesJsonIn("../data/classes.json");
+    var jsonclasses = leesJsonIn("http://r0672905.sinners.be/DndCharacterCreation/classes.json");
     console.log(jsonclasses);
 
     var classNames = Object.keys(jsonclasses);
@@ -38,7 +39,8 @@ $(document).ready(function () {
 
 
     //alles met de RACES
-    var jsonRaces = leesJsonIn("../data/races.json");
+    // var jsonRaces = leesJsonIn("../data/races.json");
+    var jsonRaces = leesJsonIn("http://r0672905.sinners.be/DndCharacterCreation/races.json");
     console.log(jsonRaces);
 
     var raceNames = Object.keys(jsonRaces);
