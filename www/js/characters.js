@@ -1,12 +1,15 @@
 $(document).ready(function () {
-    $('a#qr').click(function () {
+    $('a#qrscan').click(function () {
         console.log('SCAN!!!');
         cordova.plugins.barcodeScanner.scan(
             function (result) {
+                /*
                 alert("We got a barcode\n" +
                     "Result: " + result.text + "\n" +
                     "Format: " + result.format + "\n" +
                     "Cancelled: " + result.cancelled);
+                */
+                console.log(result.text)
             },
             function (error) {
                 alert("Scanning failed: " + error);
@@ -26,4 +29,5 @@ $(document).ready(function () {
             }
         );
     });
+
 });
