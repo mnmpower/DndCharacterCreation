@@ -9,6 +9,7 @@ $(document).ready(function () {
            //$('.tabs').tabs('select','Melee');
         }
     });
+
     //alles met de CLASSES
     // var jsonclasses = leesJsonIn("../data/classes.json");
     var jsonclasses = leesJsonIn("http://r0672905.sinners.be/DndCharacterCreation/classes.json");
@@ -67,6 +68,18 @@ $(document).ready(function () {
     $('#gekozenClass').html("Class: "+gekozenClass);
     $('#gekozenRace').html("Race: "+gekozenRace);
 
+    $('#naarCharacterCreationDeel2').click(function (e) {
+        e.preventDefault();
+        hide('#deel1CharacterCreation');
+        show('#deel2CharacterCreation');
+    });
+    $('#knop2').click(function (e) {
+        e.preventDefault();
+        hide('#deel2CharacterCreation');
+        show('#deel1CharacterCreation');
+    });
+
+    hide('#deel2CharacterCreation');
 });
 
 function leesJsonIn(url) {
@@ -223,6 +236,14 @@ function leesRaceTabsIn(racenames,jsonRaces) {
     // console.log(resultaat);
     $('div.tabsRacesAfdrukken').html(resultaat);
 
+}
+
+function hide(selector) {
+    $(selector).hide();
+}
+
+function show(selector) {
+    $(selector).show();
 }
 
 

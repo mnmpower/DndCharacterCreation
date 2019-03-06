@@ -136,8 +136,6 @@ select {
     background-color: grey;
     border: 1px solid #000;
     border-radius: 5px;
-    -webkit-box-shadow: 5px 5px 5px 0px rgba(26,26,26,1);
-    -moz-box-shadow: 5px 5px 5px 0px rgba(26,26,26,1);
     box-shadow: 5px 5px 5px 0px rgba(26,26,26,1);
 
 }
@@ -156,6 +154,14 @@ select {
 .collapsible.expandable{
     width: 100vw;
     border: none;
+}
+
+.text-bolt{
+    font-weight: bold;
+}
+
+.right-aligned2{
+    text-align: right!important;
 }
 
 @media screen and (min-width:350px) {
