@@ -139,10 +139,10 @@
 					<div id="gekozenRace" class="text-bolt"></div>
 
 					<p>
-						<a class="waves-effect waves-light btn-small" id="naarCharacterCreationDeel2" href="../index.html">Volgende</a>
+						<a class="waves-effect waves-light btn-small " id="naarCharacterCreationDeel2" href="#">Volgende</a>
 					</p>
 					<p>
-						<a class="waves-effect waves-light btn-small" href="../index.html">Home</a>
+						<a class="waves-effect waves-light btn-small mb-30" href="../index.html">Home</a>
 					</p>
 				</div>
 			</div>
@@ -150,59 +150,78 @@
 
 		</div>
 		<div id="deel2CharacterCreation" class="container center-align">
-				<table>
-					<tr class="row">
-						<th class="col s2">Ability</th>
-						<th class="col s4 center-align">Points</th>
-						<th class="col s3 center-align">Point cost</th>
-						<th class="col s3 right-aligned" >Ability Modifier</th>
-					</tr>
-					<tr>
-						<td>STR</td>
-						<td></td>
-						<td></td>
-						<td></td>
-					</tr>
-					<tr>
-						<td>DEX</td>
-						<td></td>
-						<td></td>
-						<td></td>
-					</tr>
-					<tr>
-						<td>CON</td>
-						<td></td>
-						<td></td>
-						<td></td>
-					</tr>
-					<tr>
-						<td>INT</td>
-						<td></td>
-						<td></td>
-						<td></td>
-					</tr>
-					<tr>
-						<td>WIS</td>
-						<td></td>
-						<td></td>
-						<td></td>
-					</tr>
-					<tr>
-						<td>CHA</td>
-						<td></td>
-						<td></td>
-						<td></td>
-					</tr>
-				</table>
-			
+			<h2><span>Points available: </span><span id="pointsAvailable">32</span></h2>
+			<table>
+				<tr >
+					<th class="col s2 left-align" >Ability</th>
+					<th class="col s6 center-align">Points</th>
+					<th class="col s2 center-align">Point cost</th>
+					<th class="col s2 center-align" >Ability Modifier</th>
+				</tr>
+				<tr  class="">
+					<td class="col s2 left-align  " id="str1">STR</td>
+					<td class="col s6 center-align no-margin no-padding" id="str2"><table class=""><tr class="noborder no-magin">
+						<td class="right-align statDown" id="strDown"><i class="fas fa-angle-double-left fa-lg"></i></td>
+						<td class="center-align" id="strTotal">8</td>
+						<td class="left-align statUp" id="strUp"><i class="fas fa-angle-double-right fa-lg"></i></td></tr></table></td>
+					<td class="col s2 center-align " id="str3">1</td>
+					<td class="col s2 center-align " id="str4">-1</td>
+				</tr>
+				<tr>
+					<td class="col s2 left-align" id="dex1">DEX</td>
+					<td class="col s6 center-align no-margin no-padding" id="dex2"><table class=""><tr class="noborder no-magin">
+						<td class="right-align statDown" id="dexDown"><i class="fas fa-angle-double-left fa-lg"></i></td>
+						<td class="center-align" id="dexTotal">8</td>
+						<td class="left-align statUp" id="dexUp"><i class="fas fa-angle-double-right fa-lg"></i></td></tr></table></td>
+					<td class="col s2 center-align" id="dex3">1</td>
+					<td class="col s2 center-align" id="dex4">-1</td>
+				</tr>
+				<tr>
+					<td class="col s2 left-align" id="con1">CON</td>
+					<td class="col s6 center-align no-margin no-padding" id="con2"><table class=""><tr class="noborder no-magin">
+						<td class="right-align statDown" id="conDown"><i class="fas fa-angle-double-left fa-lg"></i></td>
+						<td class="center-align" id="conTotal">8</td>
+						<td class="left-align statUp" id="conUp"><i class="fas fa-angle-double-right fa-lg"></i></td></tr></table></td>
+					<td class="col s2 center-align" id="con3">1</td>
+					<td class="col s2 center-align" id="con4">-1</td>
+				</tr>
+				<tr>
+					<td class="col s2 left-align" id="int1">INT</td>
+					<td class="col s6 center-align no-margin no-padding" id="int2"><table class=""><tr class="noborder no-magin">
+						<td class="right-align statDown" id="intDown"><i class="fas fa-angle-double-left fa-lg"></i></td>
+						<td class="center-align" id="intTotal">8</td>
+						<td class="left-align statUp" id="intUp"><i class="fas fa-angle-double-right fa-lg"></i></td></tr></table></td>
+					<td class="col s2 center-align" id="int3">1</td>
+					<td class="col s2 center-align" id="int4">-1</td>
+				</tr>
+				<tr>
+					<td class="col s2 left-align" id="wis1">WIS</td>
+					<td class="col s6 center-align no-margin no-padding" id="wis2"><table class=""><tr class="noborder no-magin">
+						<td class="right-align statDown" id="wisDown"><i class="fas fa-angle-double-left fa-lg"></i></td>
+						<td class="center-align" id="wisTotal">8</td>
+						<td class="left-align statUp" id="wisUp"><i class="fas fa-angle-double-right fa-lg"></i></td></tr></table></td>
+					<td class="col s2 center-align" id="wis3">1</td>
+					<td class="col s2 center-align" id="wis4">-1</td>
+				</tr>
+				<tr>
+					<td class="col s2 left-align" id="cha1">CHA</td>
+					<td class="col s6 center-align no-margin no-padding" id="cha2"><table class=""><tr class="noborder no-magin">
+						<td class="right-align statDown" id="chaDown"><i class="fas fa-angle-double-left fa-lg"></i></td>
+						<td class="center-align" id="chaTotal">8</td>
+						<td class="left-align statUp" id="chaUp"><i class="fas fa-angle-double-right fa-lg"></i></td></tr></table></td>
+					<td class="col s2 center-align" id="cha3">1</td>
+					<td class="col s2 center-align" id="cha4">-1</td>
+				</tr>
+			</table>
+
 			<div>
 
 				<!-- BUTTONS -->
 				<p>
-					<a class="waves-effect waves-light btn-small" id="knop2" href="../index.html">submit</a>
+					<a class="waves-effect waves-light btn-small" id="knop2" href="#">submit</a>
 				</p>
 				<p>
-					<a class="waves-effect waves-light btn-small" id="knop3" href="../index.html">Home</a>
+					<a class="waves-effect waves-light btn-small mb-30" id="knop3" href="../index.html">Home</a>
 				</p>
 			</div>
 		</div>
@@ -212,17 +231,19 @@
 			<!-- Toevoegen van Materialize libs -->
 			<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
 			<!-- Toevoegen van cordova -->
-			<script type="text/javascript" src="../js/cordova.js"></script>
+			<script type="text/javascript" src="../cordova.js"></script>
 			<!-- JavaScript defer: https://www.w3schools.com/tags/att_script_defer.asp -->
 
 			<!-- Hier alle andere JS pagina's linken -->
 			<!-- ------------------START--------------- -->
 
 			<!-- Toevoegen van characterCreation js -->
-			<script type="text/javascript" src="../js/characterCreation.js"></script>
+			<!--<script type="text/javascript" src="../js/characterCreationMAarten.js"></script>-->
 
 			<!-- -------------------END--------------- -->
 			<script type="text/javascript" src="../js/app.js"></script>
+			<script src="../js/characterCreation.js"></script>
+			<script src="../js/characterCreationClass.js"></script>
 		</div>
 	</body>
 </html>

@@ -163,6 +163,16 @@ select {
 .right-aligned2{
     text-align: right!important;
 }
+.noborder{
+    border: none;
+}
+.no-margin{
+    margin: 0!important;
+}
+
+
+
+
 
 @media screen and (min-width:350px) {
     .container{
