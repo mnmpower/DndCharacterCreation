@@ -107,6 +107,8 @@ var database = function () {
             $('a.race').click(function () {
                 selectedRace = $(this).text();
                 _updateGekozenRace(selectedRace);
+
+
             });
 
         });
@@ -193,6 +195,7 @@ var database = function () {
     var _updateGekozenRace = function (selectedRace) {
         // console.log(selectedRace);
         $('#gekozenRace').html("Race: "+selectedRace);
+        updateRacialStatPoints(selectedRace);
     };
 
     var _updateGekozenClass = function (selectedClass) {
@@ -498,6 +501,144 @@ var database = function () {
         console.log('pointsAvailable set to: ',pointsAvailable);
     };
 
+    var updateRacialStatPoints = function (selectedRace) {
+        console.log(selectedRace);
+        switch (selectedRace) {
+            case 'Human':
+                strPunten = 9;
+                dexPunten = 9;
+                conPunten = 9;
+                intPunten = 9;
+                wisPunten = 9;
+                chaPunten = 9;
+                _setStatTotalPointsInHtml('str',strPunten);
+                _setStatTotalPointsInHtml('dex',dexPunten);
+                _setStatTotalPointsInHtml('con',conPunten);
+                _setStatTotalPointsInHtml('int',intPunten);
+                _setStatTotalPointsInHtml('wis',wisPunten);
+                _setStatTotalPointsInHtml('cha',chaPunten);
+                break;
+            case 'Dwarf':
+                strPunten = 8;
+                dexPunten = 8;
+                conPunten = 10;
+                intPunten = 8;
+                wisPunten = 8;
+                chaPunten = 8;
+                _setStatTotalPointsInHtml('str',strPunten);
+                _setStatTotalPointsInHtml('dex',dexPunten);
+                _setStatTotalPointsInHtml('con',conPunten);
+                _setStatTotalPointsInHtml('int',intPunten);
+                _setStatTotalPointsInHtml('wis',wisPunten);
+                _setStatTotalPointsInHtml('cha',chaPunten);
+                break;
+            case 'Elf':
+                strPunten = 8;
+                dexPunten = 10;
+                conPunten = 8;
+                intPunten = 8;
+                wisPunten = 8;
+                chaPunten = 8;
+                _setStatTotalPointsInHtml('str',strPunten);
+                _setStatTotalPointsInHtml('dex',dexPunten);
+                _setStatTotalPointsInHtml('con',conPunten);
+                _setStatTotalPointsInHtml('int',intPunten);
+                _setStatTotalPointsInHtml('wis',wisPunten);
+                _setStatTotalPointsInHtml('cha',chaPunten);
+                break;
+            case 'Halfling':
+                strPunten = 8;
+                dexPunten = 10;
+                conPunten = 8;
+                intPunten = 8;
+                wisPunten = 8;
+                chaPunten = 8;
+                _setStatTotalPointsInHtml('str',strPunten);
+                _setStatTotalPointsInHtml('dex',dexPunten);
+                _setStatTotalPointsInHtml('con',conPunten);
+                _setStatTotalPointsInHtml('int',intPunten);
+                _setStatTotalPointsInHtml('wis',wisPunten);
+                _setStatTotalPointsInHtml('cha',chaPunten);
+                break;
+            case 'Dragonborn':
+                strPunten = 10;
+                dexPunten = 8;
+                conPunten = 8;
+                intPunten = 8;
+                wisPunten = 8;
+                chaPunten = 9;
+                _setStatTotalPointsInHtml('str',strPunten);
+                _setStatTotalPointsInHtml('dex',dexPunten);
+                _setStatTotalPointsInHtml('con',conPunten);
+                _setStatTotalPointsInHtml('int',intPunten);
+                _setStatTotalPointsInHtml('wis',wisPunten);
+                _setStatTotalPointsInHtml('cha',chaPunten);
+                break;
+            case 'Gnome':
+                strPunten = 8;
+                dexPunten = 8;
+                conPunten = 8;
+                intPunten = 10;
+                wisPunten = 8;
+                chaPunten = 9;
+                _setStatTotalPointsInHtml('str',strPunten);
+                _setStatTotalPointsInHtml('dex',dexPunten);
+                _setStatTotalPointsInHtml('con',conPunten);
+                _setStatTotalPointsInHtml('int',intPunten);
+                _setStatTotalPointsInHtml('wis',wisPunten);
+                _setStatTotalPointsInHtml('cha',chaPunten);
+                break;
+            case 'Half-Elf'://BIJWERKENI888888
+                strPunten = 8;
+                dexPunten = 8;
+                conPunten = 8;
+                intPunten = 8;
+                wisPunten = 8;
+                chaPunten = 10;
+                _setStatTotalPointsInHtml('str',strPunten);
+                _setStatTotalPointsInHtml('dex',dexPunten);
+                _setStatTotalPointsInHtml('con',conPunten);
+                _setStatTotalPointsInHtml('int',intPunten);
+                _setStatTotalPointsInHtml('wis',wisPunten);
+                _setStatTotalPointsInHtml('cha',chaPunten);
+                break;
+            case 'Half-Orc':
+                strPunten = 10;
+                dexPunten = 8;
+                conPunten = 9;
+                intPunten = 8;
+                wisPunten = 8;
+                chaPunten = 8;
+                _setStatTotalPointsInHtml('str',strPunten);
+                _setStatTotalPointsInHtml('dex',dexPunten);
+                _setStatTotalPointsInHtml('con',conPunten);
+                _setStatTotalPointsInHtml('int',intPunten);
+                _setStatTotalPointsInHtml('wis',wisPunten);
+                _setStatTotalPointsInHtml('cha',chaPunten);
+                break;
+            case 'Tiefling':
+                strPunten = 8;
+                dexPunten = 8;
+                conPunten = 8;
+                intPunten = 9;
+                wisPunten = 8;
+                chaPunten = 10;
+                _setStatTotalPointsInHtml('str',strPunten);
+                _setStatTotalPointsInHtml('dex',dexPunten);
+                _setStatTotalPointsInHtml('con',conPunten);
+                _setStatTotalPointsInHtml('int',intPunten);
+                _setStatTotalPointsInHtml('wis',wisPunten);
+                _setStatTotalPointsInHtml('cha',chaPunten);
+                break;
+        }
+
+        _setModifierInHtml('str');
+        _setModifierInHtml('dex');
+        _setModifierInHtml('con');
+        _setModifierInHtml('int');
+        _setModifierInHtml('wis');
+        _setModifierInHtml('cha');
+    };
 
 
     return {
@@ -508,7 +649,8 @@ var database = function () {
         show: show,
         hide: hide,
         statOmhoog: statOmhoog,
-        statOmlaag: statOmlaag
+        statOmlaag: statOmlaag,
+        updateRacialStatPoints: updateRacialStatPoints
     }
 
 }();

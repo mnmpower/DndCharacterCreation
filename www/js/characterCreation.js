@@ -26,6 +26,7 @@ $(document).ready(function () {
         database.show('#deel1CharacterCreation');
     });
 
+
     database.hide('#deel2CharacterCreation');
 
     $('.statDown').click(function () {
