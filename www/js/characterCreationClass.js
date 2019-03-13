@@ -13,6 +13,10 @@ var database = function () {
     var selectedStyle;
     var selectedRace="Human";
     var selectedClass="Barbarian";
+    var selectedAlignment="Lawful good";
+    var firstName;
+    var lastName;
+    var sex;
 
     var availablePoints;
     var strPunten;
@@ -27,6 +31,24 @@ var database = function () {
     var intteller = 0;
     var wisteller = 0;
     var chateller = 0;
+
+    var alignmentNames = [
+        "Lawful good","Neutral good", "Chaotic good",
+        "Lawful neutral","Neutral", "Chaotic neutral",
+        "Lawful evil","Neutral evil", "Chaotic evil"
+    ];
+    var alignmentContents =[
+        "creatures can be counted on to do the right thing as expected by society. Gold dragons, paladins, and most dwarves are lawful good.",
+        "folk do the best they can to help others according to their needs. Many celestials, some cloud giants, and most gnomes are neutral good.",
+        "creatures act as their conscience directs, with little regard for what others expect. Copper dragons, many elves, and unicorns are chaotic good.",
+        "individuals act in accordance with law, tradition, or personal codes. Many monks and some wizards are lawful neutral.",
+        "is the alignment of those who prefer to steer clear of moral questions and don’t take sides, doing what seems best at the time. Lizardfolk, most druids, and many humans are neutral.",
+        "creatures follow their whims, holding their personal freedom above all else. Many barbarians and rogues, and some bards, are chaotic neutral.",
+        "creatures methodically take what they want, within the limits of a code of tradition, loyalty, or order. Devils, blue dragons, and hobgoblins are lawful evil.",
+        "is the alignment of those who do whatever they can get away with, without compassion or qualms. Many drow, some cloud giants, and goblins are neutral evil.",
+        "creatures act with arbitrary violence, spurred by their greed, hatred, or bloodlust. Demons, red dragons, and orcs are chaotic evil."
+    ];
+
 
     var init = function () {
         _updateGekozenRace(selectedRace);
@@ -640,6 +662,69 @@ var database = function () {
         _setModifierInHtml('cha');
     };
 
+    var vulAlignmentDropdown = function () {
+        var resultaat ="";
+
+
+        alignmentNames.forEach(function(alignmentName){
+           resultaat += "<option value='" + alignmentName + "'>"+ alignmentName +"</option>";
+        });
+
+        $('#alignmentDropDown').html(resultaat);
+    };
+
+    var setAlignmentContent = function (alignmentName) {
+        var resultaat="";
+        selectedAlignment = alignmentName;
+        switch (alignmentName) {
+            case "Lawful good":
+                resultaat = alignmentContents[0];
+                break;
+            case "Neutral good":
+                resultaat = alignmentContents[1];
+                break;
+            case "Chaotic good":
+                resultaat = alignmentContents[2];
+                break;
+            case "Lawful neutral":
+                resultaat = alignmentContents[3];
+                break;
+            case "Neutral":
+                resultaat = alignmentContents[4];
+                break;
+            case "Chaotic neutral":
+                resultaat = alignmentContents[5];
+                break;
+            case "Lawful evil":
+                resultaat = alignmentContents[6];
+                break;
+            case "Neutral evil":
+                resultaat = alignmentContents[7];
+                break;
+            case "Chaotic evil":
+                resultaat = alignmentContents[8];
+                break;
+
+        }
+
+        $("#alignmentContent").html(resultaat);
+    };
+
+    var checkPointsAvailible = function () {
+        if (availablePoints == 0){
+            return true
+        } else {
+            return false
+        }
+    };
+
+    var slaagLaatsteGegevensOp = function (naam, achternaam, alignment, geslacht) {
+        firstName = naam;
+        lastName = achternaam;
+        selectedAlignment = alignment;
+        sex = geslacht;
+    };
+
 
     return {
         init: init,
@@ -650,7 +735,11 @@ var database = function () {
         hide: hide,
         statOmhoog: statOmhoog,
         statOmlaag: statOmlaag,
-        updateRacialStatPoints: updateRacialStatPoints
+        updateRacialStatPoints: updateRacialStatPoints,
+        vulAlignmentDropdown: vulAlignmentDropdown,
+        setAlignmentContent: setAlignmentContent,
+        checkPointsAvailible: checkPointsAvailible,
+        slaagLaatsteGegevensOp: slaagLaatsteGegevensOp
     }
 
 }();

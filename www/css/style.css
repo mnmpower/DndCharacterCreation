@@ -104,6 +104,10 @@ h3 {
 .ml-10{
     margin-left: 10px;
 }
+
+.pt-10{
+    padding-top: 10px;
+}
 #rolld20Dropdown, #rolld12Dropdown, #rolld10Dropdown, #rolld08Dropdown, #rolld06Dropdown, #rolld04Dropdown{
    width: 70%;
 }
