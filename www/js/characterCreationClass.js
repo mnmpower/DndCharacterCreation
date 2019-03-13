@@ -725,6 +725,51 @@ var database = function () {
         sex = geslacht;
     };
 
+    var saveCharacterInDatabase = function () {
+
+        var qr = firstName+lastName+sex;
+        var dataString=
+            "voornaam="+firstName
+            +"&achternaam="+ lastName
+            +"&geslacht=" + sex
+            +"&alignment=" + selectedAlignment
+            +"&race=" + selectedRace
+            +"&class=" + selectedClass
+            +"&strength=" + strPunten
+            +"&dexterity=" + dexPunten
+            +"&constitution=" + conPunten
+            +"&intelligence=" + intPunten
+            +"&wisdom=" + wisPunten
+            +"&charisma=" + chaPunten
+            +"&qr=" + qr
+            +"&insert=";
+
+        if(
+            $.trim(firstName).length>0
+            && $.trim(lastName).length>0
+            && $.trim(sex).length>0
+            && $.trim(selectedAlignment).length>0
+            && $.trim(selectedRace).length>0
+            && $.trim(selectedClass).length>0
+            && $.trim(strPunten).length>0
+            && $.trim(dexPunten).length>0
+            && $.trim(conPunten).length>0
+            && $.trim(intPunten).length>0
+            && $.trim(wisPunten).length>0
+            && $.trim(chaPunten).length>0
+            && $.trim(qr).length>0
+        )
+        {
+            $.ajax({
+                type: "POST",
+                url:"http://r0672905.sinners.be/DndCharacterCreation/insert.php",
+                data: dataString,
+                crossDomain: true,
+                cache: false
+            });
+        }return false;
+    };
+
 
     return {
         init: init,
@@ -739,7 +784,8 @@ var database = function () {
         vulAlignmentDropdown: vulAlignmentDropdown,
         setAlignmentContent: setAlignmentContent,
         checkPointsAvailible: checkPointsAvailible,
-        slaagLaatsteGegevensOp: slaagLaatsteGegevensOp
+        slaagLaatsteGegevensOp: slaagLaatsteGegevensOp,
+        saveCharacterInDatabase: saveCharacterInDatabase
     }
 
 }();

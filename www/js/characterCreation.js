@@ -37,9 +37,11 @@ $(document).ready(function () {
         var voornaam;
         var achternaam;
         var geslacht;
+        var sex = 0;
         var alignment;
         var nota="";
         var bool = false;
+        var allowDataBaseWriting = false;
 
         voornaam = $('#voornaamvak').val();
         achternaam = $('#achternaamvak').val();
@@ -48,23 +50,30 @@ $(document).ready(function () {
 
         if (voornaam === ""){
             e.preventDefault();
-            nota+= "fil in the First name!!!<br>";
+            nota+= "fill in the First name!!!<br>";
             bool = true;
         }
 
         if (achternaam === ""){
             e.preventDefault();
-            nota+= "fil in the Last name!!!";
+            nota+= "fill in the Last name!!!";
             bool = true;
+        }
+
+        if (geslacht ==='male'){
+            sex = 1
         }
 
         if (bool){
             $('#notaDeel3').html(nota);
         } else{
-            database.slaagLaatsteGegevensOp(voornaam,achternaam,alignment,geslacht);
+            database.slaagLaatsteGegevensOp(voornaam,achternaam,alignment,sex);
+            allowDataBaseWriting =true;
         }
 
-
+        if (allowDataBaseWriting){
+            database.saveCharacterInDatabase()
+        }
     });
 
 
