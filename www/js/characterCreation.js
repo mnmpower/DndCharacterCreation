@@ -12,7 +12,7 @@ $(document).ready(function () {
 
     database.leesClassesIn();
     database.leesRacesIn();
-    database.plaatsClassTabs();;
+    database.plaatsClassTabs();
     database.init();
     database.vulAlignmentDropdown();
 
