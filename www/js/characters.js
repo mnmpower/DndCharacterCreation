@@ -30,4 +30,18 @@ $(document).ready(function () {
         );
     });
 
+    $('a#readsql').click(function () {
+        console.log("click");
+        var url = "http://r0672905.sinners.be/DndCharacterCreation/json.php";
+        var qr = "qr=" + "TEST";
+        $.getJSON(url, qr, function (result) {
+            if (result==null) {
+                console.log("null");
+            } else {
+                console.log("non null");
+                var voornaam = result[0]["voornaam"];
+            }
+            console.log(voornaam);
+        });
+    });
 });
