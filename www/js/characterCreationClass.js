@@ -17,6 +17,7 @@ var database = function () {
     var firstName;
     var lastName;
     var sex;
+    var qr;
 
     var availablePoints;
     var strPunten;
@@ -723,43 +724,70 @@ var database = function () {
         lastName = achternaam;
         selectedAlignment = alignment;
         sex = geslacht;
+        qr = firstName+lastName+sex;
+    };
+
+    var _maakCharacterJSON = function () {
+        return {
+            qr: qr,
+            firstName: firstName,
+            lastName: lastName,
+            sex: sex,
+            alignment: selectedAlignment,
+            race: selectedRace,
+            class: selectedClass,
+            stats: {
+                strength: strPunten,
+                dexterity: dexPunten,
+                constitution: conPunten,
+                intelligence: intPunten,
+                wisdom: wisPunten,
+                charisma: chaPunten
+            }
+        }
     };
 
     var saveCharacterInDatabase = function () {
 
-        var qr = firstName+lastName+sex;
+        var character = _maakCharacterJSON();
+
+        console.log('stap 1');
+
         var dataString=
-            "voornaam="+firstName
-            +"&achternaam="+ lastName
-            +"&geslacht=" + sex
-            +"&alignment=" + selectedAlignment
-            +"&race=" + selectedRace
-            +"&class=" + selectedClass
-            +"&strength=" + strPunten
-            +"&dexterity=" + dexPunten
-            +"&constitution=" + conPunten
-            +"&intelligence=" + intPunten
-            +"&wisdom=" + wisPunten
-            +"&charisma=" + chaPunten
-            +"&qr=" + qr
+            "voornaam="+character.firstName
+            +"&achternaam="+ character.lastName
+            +"&geslacht=" + character.sex
+            +"&alignment=" + character.alignment
+            +"&race=" + character.race
+            +"&class=" + character.class
+            +"&strength=" + character.stats.strength
+            +"&dexterity=" + character.stats.dexterity
+            +"&constitution=" + character.stats.constitution
+            +"&intelligence=" + character.stats.intelligence
+            +"&wisdom=" + character.stats.wisdom
+            +"&charisma=" + character.stats.charisma
+            +"&qr=" + character.qr
             +"&insert=";
 
+        console.log(dataString);
+
         if(
-            $.trim(firstName).length>0
-            && $.trim(lastName).length>0
-            && $.trim(sex).length>0
-            && $.trim(selectedAlignment).length>0
-            && $.trim(selectedRace).length>0
-            && $.trim(selectedClass).length>0
-            && $.trim(strPunten).length>0
-            && $.trim(dexPunten).length>0
-            && $.trim(conPunten).length>0
-            && $.trim(intPunten).length>0
-            && $.trim(wisPunten).length>0
-            && $.trim(chaPunten).length>0
-            && $.trim(qr).length>0
+            $.trim(character.firstName).length>0
+            && $.trim(character.lastName).length>0
+            && $.trim(character.sex).length>0
+            && $.trim(character.alignment).length>0
+            && $.trim(character.race).length>0
+            && $.trim(character.class).length>0
+            && $.trim(character.stats.strength).length>0
+            && $.trim(character.stats.dexterity).length>0
+            && $.trim(character.stats.constitution).length>0
+            && $.trim(character.stats.intelligence).length>0
+            && $.trim(character.stats.wisdom).length>0
+            && $.trim(character.stats.charisma).length>0
+            && $.trim(character.qr).length>0
         )
         {
+            console.log('stap 2');
             $.ajax({
                 type: "POST",
                 url:"http://r0672905.sinners.be/DndCharacterCreation/insert.php",
@@ -767,9 +795,56 @@ var database = function () {
                 crossDomain: true,
                 cache: false
             });
-        }return false;
+
+            charactersLocal.saveCharacter(character);
+        }
     };
 
+    var _setVariabelen = function (characterArray) {
+        qr = characterArray["qr"];
+        firstName = characterArray["voornaam"];
+        lastName = characterArray["achternaam"];
+        sex = characterArray["geslacht"];
+        selectedAlignment = characterArray["alignment"];
+        selectedRace = characterArray["race"];
+        selectedClass = characterArray["class"];
+        strPunten = characterArray["strength"];
+        dexPunten = characterArray["dexterity"];
+        conPunten = characterArray["constitution"];
+        intPunten = characterArray["intelligence"];
+        wisPunten = characterArray["wisdom"];
+        chaPunten = characterArray["charisma"];
+
+        return true;
+    };
+
+    var loadCharacterFromDatabase = function (qrString) {
+        var url = "http://r0672905.sinners.be/DndCharacterCreation/json.php";
+        var qr = "qr=" + qrString;
+        console.log('test 1: ' + qr);
+        $.getJSON(url, qr, function (result) {
+            if (result==null) {
+                console.log("null");
+            } else {
+                console.log("non null");
+                var voornaam = result[0]["voornaam"];
+            }
+            console.log(result[0]);
+            if(_setVariabelen(result[0])) {
+                var character = (_maakCharacterJSON());
+                charactersLocal.saveCharacter(character);
+                alert('Your character: ' + character.firstName + ', has been saved successfully');
+            }
+        });
+        /*
+        $.getJSON(url, qr, function (result) {
+            console.log('test 2');
+            if(_setVariabelen(result[0])) {
+                return(_maakCharacterJSON());
+            }
+        });
+        */
+    };
 
     return {
         init: init,
@@ -785,7 +860,8 @@ var database = function () {
         setAlignmentContent: setAlignmentContent,
         checkPointsAvailible: checkPointsAvailible,
         slaagLaatsteGegevensOp: slaagLaatsteGegevensOp,
-        saveCharacterInDatabase: saveCharacterInDatabase
+        saveCharacterInDatabase: saveCharacterInDatabase,
+        loadCharacterFromDatabase: loadCharacterFromDatabase
     }
 
 }();

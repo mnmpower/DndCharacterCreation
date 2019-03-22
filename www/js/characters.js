@@ -1,15 +1,31 @@
 $(document).ready(function () {
+
+    charactersLocal.init();
+    $('.collapsible').collapsible();
+
+    $('a.showqr').click(function () {
+        cordova.plugins.barcodeScanner.encode(
+            cordova.plugins.barcodeScanner.Encode.TEXT_TYPE,
+            $(this).attr('qr'),
+            function (success) {
+                console.log(success);
+            }, function (fail) {
+                console.log(fail);
+            });
+    });
+
+    $('a.deleteqr').click(function () {
+        var qr = $(this).attr('qr');
+        charactersLocal.deleteCharacter(qr);
+    });
+
     $('a#qrscan').click(function () {
         console.log('SCAN!!!');
         cordova.plugins.barcodeScanner.scan(
             function (result) {
-                /*
-                alert("We got a barcode\n" +
-                    "Result: " + result.text + "\n" +
-                    "Format: " + result.format + "\n" +
-                    "Cancelled: " + result.cancelled);
-                */
-                console.log(result.text)
+                console.log(result.text);
+                database.loadCharacterFromDatabase(result.text);
+                charactersLocal.init();
             },
             function (error) {
                 alert("Scanning failed: " + error);
@@ -44,4 +60,5 @@ $(document).ready(function () {
             console.log(voornaam);
         });
     });
+
 });

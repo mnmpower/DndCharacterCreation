@@ -41,6 +41,7 @@ $(document).ready(function () {
         var alignment;
         var nota="";
         var bool = false;
+        var allowCharacterJSON = false;
         var allowDataBaseWriting = false;
 
         voornaam = $('#voornaamvak').val();
@@ -68,11 +69,11 @@ $(document).ready(function () {
             $('#notaDeel3').html(nota);
         } else{
             database.slaagLaatsteGegevensOp(voornaam,achternaam,alignment,sex);
-            allowDataBaseWriting =true;
+            allowDataBaseWriting = true;
         }
 
         if (allowDataBaseWriting){
-            database.saveCharacterInDatabase()
+            database.saveCharacterInDatabase();
         }
     });
 
