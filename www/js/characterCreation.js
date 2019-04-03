@@ -10,24 +10,24 @@ $(document).ready(function () {
         }
     });
 
-    database.leesClassesIn();
-    database.leesRacesIn();
-    database.plaatsClassTabs();
-    database.init();
-    database.vulAlignmentDropdown();
+    creation.leesClassesIn();
+    creation.leesRacesIn();
+    creation.plaatsClassTabs();
+    creation.init();
+    creation.vulAlignmentDropdown();
 
     $('#naarCharacterCreationDeel2').click(function (e) {
         e.preventDefault();
-        database.hide('#deel1CharacterCreation');
-        database.show('#deel2CharacterCreation');
-        database.hide('#deel3CharacterCreation');
+        creation.hide('#deel1CharacterCreation');
+        creation.show('#deel2CharacterCreation');
+        creation.hide('#deel3CharacterCreation');
     });
     $('#naarCharacterCreationDeel3').click(function (e) {
         e.preventDefault();
-        if (database.checkPointsAvailible()){
-            database.hide('#deel1CharacterCreation');
-            database.hide('#deel2CharacterCreation');
-            database.show('#deel3CharacterCreation');
+        if (creation.checkPointsAvailible()){
+            creation.hide('#deel1CharacterCreation');
+            creation.hide('#deel2CharacterCreation');
+            creation.show('#deel3CharacterCreation');
         }else {
             $("#notaDeel2").html("Spend all your available points before proceeding!!")
         }
@@ -41,8 +41,7 @@ $(document).ready(function () {
         var alignment;
         var nota="";
         var bool = false;
-        var allowCharacterJSON = false;
-        var allowDataBaseWriting = false;
+        var allowLocalWriting = false;
 
         voornaam = $('#voornaamvak').val();
         achternaam = $('#achternaamvak').val();
@@ -68,39 +67,33 @@ $(document).ready(function () {
         if (bool){
             $('#notaDeel3').html(nota);
         } else{
-            database.slaagLaatsteGegevensOp(voornaam,achternaam,alignment,sex);
-            allowDataBaseWriting = true;
+            creation.slaagLaatsteGegevensOp(voornaam,achternaam,alignment,sex);
+            allowLocalWriting = true;
         }
 
-        if (allowDataBaseWriting){
-            database.saveCharacterInDatabase();
+        if (allowLocalWriting){
+            creation.saveCharacter();
         }
     });
 
 
-    database.hide('#deel2CharacterCreation');
-    database.hide('#deel3CharacterCreation');
+    creation.hide('#deel2CharacterCreation');
+    creation.hide('#deel3CharacterCreation');
 
     $('.statDown').click(function () {
         var stat = $(this).attr('id').substr(0,3);
         console.log(stat);
-        database.statOmlaag(stat)
+        creation.statOmlaag(stat)
     });
 
     $('.statUp').click(function () {
         var stat = $(this).attr('id').substr(0,3);
         console.log(stat);
-        database.statOmhoog(stat)
+        creation.statOmhoog(stat)
     });
 
     $("#alignmentDropDown").change(function () {
         var alignmentName = this.value;
-        database.setAlignmentContent(alignmentName);
+        creation.setAlignmentContent(alignmentName);
     });
-
-
-
-
-
-
 });
