@@ -10,7 +10,7 @@ var overview = function () {
 
             var item =
                 `<li>
-                    <div class="collapsible-header">${character.firstName + character.lastName}</div>
+                    <div class="collapsible-header">${character.firstName + " " + character.lastName}</div>
                     <div class="collapsible-body">
                         <div class="row">
                             <div class="col s6">sex: </div>
