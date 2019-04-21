@@ -2,7 +2,6 @@ var overview = function () {
 
     // Zet gegevens om naar een accordeon
     var _charactersList = function () {
-        console.log('list of characters');
         $('ul').empty();
         for (var i = 0; i < localStorage.length; i++) {
             var key = localStorage.key(i);
@@ -62,6 +61,7 @@ var overview = function () {
                                 </tr>
                             </tbody>
                         </table>
+                        <div id="for-${character.qr}"></div>
                         <p><a class="waves-effect waves-light btn-small showqr" qr="${character.qr}" href="#">Show QR</a></p>
                         <p><a class="waves-effect waves-light btn-small delete" qr="${character.qr}" href="#">Delete</a></p>
                         <p><a class="waves-effect waves-light btn-small backup" qr="${character.qr}" href="#">Save online</a></p>
@@ -107,14 +107,15 @@ var overview = function () {
     };
 
     // Genereer de QR code van het karakter
-    var encodeQR = function () {
+    var encodeQR = function (qr) {
         cordova.plugins.barcodeScanner.encode(
             cordova.plugins.barcodeScanner.Encode.TEXT_TYPE,
-            $(this).attr('qr'),
+            qr,
 
             // Indien successvol: toon een melding met QR code
             function (success) {
-                alert(success);
+                var qrlocation = "#for-" + qr;
+                $(qrlocation).append(success);
                 location.reload();
             },
 

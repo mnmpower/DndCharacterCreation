@@ -1,11 +1,12 @@
 var database = function () {
 
+    // Sla het karakter op in de database
     var saveCharacter = function (key) {
 
+        // Lees het geselecteerde karakter in
         var character = JSON.parse(localStorage.getItem(key));
 
-        console.log('Character read from local storage');
-
+        // zet het karakterobject om naar een data string voor de database
         var dataString=
             "voornaam="+character.firstName
             +"&achternaam="+ character.lastName
@@ -22,8 +23,7 @@ var database = function () {
             +"&qr=" + character.qr
             +"&insert=";
 
-        console.log(dataString);
-
+        // Controleer op valsspelen
         if(
             $.trim(character.firstName).length>0
             && $.trim(character.lastName).length>0
@@ -40,7 +40,7 @@ var database = function () {
             && $.trim(character.qr).length>0
         )
         {
-            console.log('Uploading ...');
+            // Sla de data op in de database
             $.ajax({
                 type: "POST",
                 url:"http://r0672905.sinners.be/DndCharacterCreation/insert.php",
@@ -48,20 +48,18 @@ var database = function () {
                 crossDomain: true,
                 cache: false,
                 success: function () {
-                    console.log('something went right');
                     alert('Your character has been uploaded successfully');
                 },
                 error: function () {
-                    console.log('something went wrong');
                     alert('Saving failed');
                 }
             });
         } else {
-            console.log('Error in character creation!');
             location.reload();
         }
     };
 
+    // Maak van de array van variabelen een JSON object
     var _maakCharacterJSON = function (characterArray) {
         return {
             qr: characterArray["qr"],
@@ -82,6 +80,7 @@ var database = function () {
         }
     };
 
+    // Lees een karakter in vanuit de database
     var loadCharacter = function (qrString) {
         var url = "http://r0672905.sinners.be/DndCharacterCreation/json.php";
         var qr = "qr=" + qrString;

@@ -417,16 +417,15 @@ var creation = function () {
         }
 
         $('#'+stat+'4').text(modifier);
-
-        console.log('modifier',modifier);
     };
 
+    // Bepaal het totaal aantal statpoints
     var _getStatTotalPointsOnLoad = function (stat) {
         var statTotal = $('#'+stat+'Total').text();
-        console.log(stat, statTotal);
         return statTotal;
     };
 
+    // Bereken hoeveel het veranderen van een stat kost
     var _getPointCost = function (stat) {
         var statpuntenteller;
         var cost = 0;
@@ -451,7 +450,6 @@ var creation = function () {
                 statpuntenteller = chateller;
                 break;
         }
-        console.log('spt:', statpuntenteller);
 
         switch (true) {
             case (statpuntenteller < 6):
@@ -465,10 +463,10 @@ var creation = function () {
                 break;
 
         }
-        console.log('cost:',cost);
         return cost;
     };
 
+    // Bereken hoeveel je voor het veranderen van een stat terugkrijgt
     var _getPointRefund = function (stat) {
         var statpuntenteller;
         var refund = 0;
@@ -493,7 +491,6 @@ var creation = function () {
                 statpuntenteller = chateller;
                 break;
         }
-        console.log('spt:', statpuntenteller);
 
         switch (true) {
             case (statpuntenteller < 7):
@@ -507,32 +504,32 @@ var creation = function () {
                 break;
 
         }
-        console.log('refund:',refund);
         return refund;
     };
 
+    // Toon de kost in HTML
     var _setPointCostInHtml = function (stat,cost) {
         $('#'+stat+'3').text(cost);
     };
 
+    // Toon het stat totaal in HTML
     var _setStatTotalPointsInHtml = function (stat,totalStatPoints) {
         $('#'+stat+'Total').text(totalStatPoints);
-        console.log('totalStatPoints set to: ',totalStatPoints);
     };
 
+    // Bereken hoeveel statpoints nog beschikbaar zijn na verandering
     var _getPointsAvailableOnLoad = function () {
         var availablePoints = $('#pointsAvailable').text();
-        console.log('availablePoints',availablePoints);
         return availablePoints;
     };
 
+    // Toon de beschikbare statpoints in HTML
     var _setPointsAvailableInHtml = function (pointsAvailable) {
         $('#pointsAvailable').text(pointsAvailable);
-        console.log('pointsAvailable set to: ',pointsAvailable);
     };
 
+    // Pas de statpoints aan naargelang de race
     var updateRacialStatPoints = function (selectedRace) {
-        console.log(selectedRace);
         switch (selectedRace) {
             case 'Human':
                 strPunten = 9;
@@ -670,6 +667,7 @@ var creation = function () {
         _setModifierInHtml('cha');
     };
 
+    // Vul de alignment dropdown in met de ingelezen gegevens
     var vulAlignmentDropdown = function () {
         var resultaat ="";
 
@@ -681,6 +679,7 @@ var creation = function () {
         $('#alignmentDropDown').html(resultaat);
     };
 
+    // Toon gekozen alignment in HTML
     var setAlignmentContent = function (alignmentName) {
         var resultaat="";
         selectedAlignment = alignmentName;
@@ -718,6 +717,7 @@ var creation = function () {
         $("#alignmentContent").html(resultaat);
     };
 
+    // Kijk na of alle beschikbare statpoints benut zijn
     var checkPointsAvailible = function () {
         if (availablePoints == 0){
             return true
@@ -726,6 +726,7 @@ var creation = function () {
         }
     };
 
+    // Sla de laatst bewerkte gegevens op in de juiste variabelen
     var slaagLaatsteGegevensOp = function (naam, achternaam, alignment, geslacht) {
         firstName = naam;
         lastName = achternaam;
@@ -734,6 +735,7 @@ var creation = function () {
         qr = firstName+lastName+sex;
     };
 
+    // Maak een JSON object van alle variabelen
     var _maakCharacterJSON = function () {
         return {
             qr: qr,
@@ -754,6 +756,7 @@ var creation = function () {
         }
     };
 
+    // Sla het karakter lokaal op
     var saveCharacter = function () {
         var character = _maakCharacterJSON();
         local.saveCharacter(character);

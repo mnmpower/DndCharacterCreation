@@ -6,8 +6,9 @@ $(document).ready(function () {
 
     // Toon de QR code van het karakter
     $('a.showqr').click(function (e) {
-        e.preventDefault();
-        overview.encodeQR();
+        e.preventDefault()
+        var qr = $(this).attr('qr');
+        overview.encodeQR(qr);
     });
 
     // Verwijder het lokaal opgeslagen karakter
