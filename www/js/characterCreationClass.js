@@ -1,5 +1,6 @@
 var creation = function () {
 
+    // Declareren
     var races;
     var classes;
 
@@ -51,6 +52,7 @@ var creation = function () {
     ];
 
 
+    // Initialiseer de pagina
     var init = function () {
         _updateGekozenRace(selectedRace);
         _updateGekozenClass(selectedClass);
@@ -63,14 +65,17 @@ var creation = function () {
         chaPunten = _getStatTotalPointsOnLoad('cha');
     };
 
+    // Haal de mogelijke Races op uit de externe opslag
     var leesRacesIn = function () {
+
+        // Locatie externe opslag
         var url = 'http://r0672905.sinners.be/DndCharacterCreation/races.json';
+
+        // Haal de Races op
         $.getJSON(url, function (data) {
             races = data;
-            // console.log('races',races);
         }).done( function () {
             raceNames = Object.keys(races);
-            // console.log('raceNames',raceNames);
 
             var resultaat="<div class=\"col s12\">\n<ul class=\"tabs\">\n";
             var i;
@@ -121,7 +126,6 @@ var creation = function () {
 
 
             resultaat+="</div>";
-            // console.log(resultaat);
             $('div.tabsRacesAfdrukken').html(resultaat);
 
             let el = $('.tabs');
@@ -137,20 +141,21 @@ var creation = function () {
         });
     };
 
+    // Haal de mogelijke Classes op uit de externe opslag
     var leesClassesIn = function () {
+
+        // Locatie externe opslag
         var url = 'http://r0672905.sinners.be/DndCharacterCreation/classes.json';
+
+        // Haal de Classes op
         $.getJSON(url, function (data) {
             classes = data;
-            // console.log('classes',classes);
         }).done( function () {
             classNames = Object.keys(classes);
-            // console.log('classNames',classNames);
 
             for ( var i = 0; i < classNames.length; i++) {
 
                 var fightingstyle = classes[classNames[i]]["ClassFeatures"]["FightingStyle"];
-
-                // console.log(fightingstyle);
 
                 if (fightingstyle =="Melee"){
                     melee.push(classNames[i]);
@@ -160,18 +165,16 @@ var creation = function () {
                     spellcaster.push(classNames[i]);
                 }
             }
-            // console.log('melee',melee);
-            // console.log('specialist',specialist);
-            // console.log('spellcaster',spellcaster);
         });
     };
 
+    // Bepaal welke Classes getoond worden naargelang de Fighting Style
     var plaatsClassTabs = function () {
         $('a.selectFightingStyle').click(function () {
             selectedStyle = $(this).text();
             var tabstitles = [];
-            // console.log('selectedStyle',selectedStyle);
-            //nakijken welke tab geklikt is + jusite date doorgeven
+
+            // Nakijken welke tab geklikt is + jusite date doorgeven
             switch (selectedStyle) {
                 case "Specialist":
                     tabstitles = specialist;
@@ -185,7 +188,6 @@ var creation = function () {
                     tabstitles = melee;
                     break;
             }
-            // console.log('tabstitles',tabstitles);
 
             var resultaat="<div class=\"col s12\">\n<ul class=\"tabs\">\n";
 
@@ -215,25 +217,28 @@ var creation = function () {
         });
     };
 
+    // Pas gegvens aan naargelang de Race
     var _updateGekozenRace = function (selectedRace) {
-        // console.log(selectedRace);
         $('#gekozenRace').html("Race: "+selectedRace);
         updateRacialStatPoints(selectedRace);
     };
 
+    // Pas gegevens aan naargelang de Class
     var _updateGekozenClass = function (selectedClass) {
-        // console.log(selectedClass);
         $('#gekozenClass').html("Class: "+selectedClass);
     };
 
+    // Laat een blok verdwijnen
     var hide = function (selector) {
         $(selector).hide();
     };
 
+    // Toont een blok
     var show = function (selector) {
         $(selector).show();
     };
 
+    // Pas de stat aan en houd rekening met het maximum
     var statOmhoog = function (stat) {
         var statPointCost = _getPointCost(stat);
         var statTotal;
@@ -310,6 +315,7 @@ var creation = function () {
         }
     };
 
+    // Pas de stat aan en houd rekening met het minimum
     var statOmlaag = function (stat) {
         var statPointRefund = _getPointRefund(stat);
         var statTotal;
@@ -386,6 +392,7 @@ var creation = function () {
         }
     };
 
+    // Toont de modifier van de stat
     var _setModifierInHtml = function (stat) {
         var modifier;
         switch (stat) {

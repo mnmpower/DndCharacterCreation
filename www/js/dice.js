@@ -1,35 +1,28 @@
 $( document ).ready(function() {
-    console.log('dice funtion rolls started');
-
     $('.dice').click(function () {
 
-        //DECLAREREN
+        // Declareren
         var resultaat="";
         var dropbox;
         var aantalDice;
         var i;
         var nummer;
 
-        //INLEZEN DROPBOX
+        // Inlezen dropbox
         var rolldXid= $(this).attr('id');
-        console.log(rolldXid);
 
         var getalvanklickedid = rolldXid.substr(5,2);
-        console.log(getalvanklickedid);
 
         var dropboxid = "amountD"+ getalvanklickedid;
-        console.log(dropboxid);
 
         dropbox = document.getElementById(dropboxid);
         aantalDice = dropbox.options[dropbox.selectedIndex].value;
-        console.log(aantalDice + " dices");
 
-        //ROLLS SIMULEREN
+        // Rollen simuleren
         for (i = 1; i <= aantalDice; i++) {
             nummer = Math.floor(Math.random() * getalvanklickedid) + 1;
-            console.log("roll: "+nummer);
 
-            //resultaat opvullen
+            // Resultaat opvullen
             if (!(i == aantalDice)){
                 resultaat += nummer + ", ";
             } else {
@@ -37,13 +30,11 @@ $( document ).ready(function() {
             }
 
         }
-        //JUISTE ID MAKEN VOOR INPUTFIELD
+        // Juiste ID maken voor het inputfield
         var inputid = "input"+getalvanklickedid;
-        console.log(inputid);
 
-        //INPUTFIELD INLIEZE
+        // Inputfield inlezen
         $('#'+inputid).val(resultaat);
-        //document.getElementById(inputid);
 
     });
 });

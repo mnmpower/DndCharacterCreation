@@ -1,5 +1,6 @@
 $(document).ready(function () {
-    //initializeren materialize
+
+    // Initializeer materialize
     let elem = $('.collapsible.expandable');
     let instanceCollapsible = M.Collapsible.init(elem, {
         accordion: false,
@@ -10,12 +11,16 @@ $(document).ready(function () {
         }
     });
 
+    // Lees de data in
     creation.leesClassesIn();
     creation.leesRacesIn();
+
+    // Vul de pagina
     creation.plaatsClassTabs();
     creation.init();
     creation.vulAlignmentDropdown();
 
+    // Verloop van de Character Creation
     $('#naarCharacterCreationDeel2').click(function (e) {
         e.preventDefault();
         creation.hide('#deel1CharacterCreation');
@@ -33,6 +38,7 @@ $(document).ready(function () {
         }
     });
 
+    // Sla karakter op
     $('#saveCharacter').click(function (e) {
         var voornaam;
         var achternaam;
@@ -75,23 +81,21 @@ $(document).ready(function () {
             creation.saveCharacter();
         }
     });
-
-
     creation.hide('#deel2CharacterCreation');
     creation.hide('#deel3CharacterCreation');
 
+    // Pas de stats aan
     $('.statDown').click(function () {
         var stat = $(this).attr('id').substr(0,3);
-        console.log(stat);
         creation.statOmlaag(stat)
     });
 
     $('.statUp').click(function () {
         var stat = $(this).attr('id').substr(0,3);
-        console.log(stat);
         creation.statOmhoog(stat)
     });
 
+    // Selecteer de alignment
     $("#alignmentDropDown").change(function () {
         var alignmentName = this.value;
         creation.setAlignmentContent(alignmentName);

@@ -1,7 +1,9 @@
 $(document).ready(function () {
+    // Lees de bestaande karakters in
     initiative.init();
     $('.modal').modal();
 
+    // Bereken van elk aangevinkt karakter de initiative
     $('#calculateInit').click(function (e) {
         var participants = [];
 
@@ -11,7 +13,8 @@ $(document).ready(function () {
                 participants.push($(this).val());
             }
         });
-        console.log(participants);
+
+        // Effective berekening
         initiative.calculateInit(participants);
     })
 });

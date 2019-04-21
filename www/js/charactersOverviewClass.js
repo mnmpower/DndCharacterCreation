@@ -1,5 +1,6 @@
 var overview = function () {
 
+    // Zet gegevens om naar een accordeon
     var _charactersList = function () {
         console.log('list of characters');
         $('ul').empty();
@@ -69,20 +70,26 @@ var overview = function () {
         }
     };
 
+    // Initialiseer de pagina
     var init = function () {
-        console.log('Creating character cards');
         _charactersList();
     };
 
+    // Open de camera van het toestel voor het scannen van een QR code
     var scanQR = function () {
         cordova.plugins.barcodeScanner.scan(
+
+            // Indien successvol: lees het karakter in
             function (result) {
-                console.log(result.text);
                 database.loadCharacter(result.text);
             },
+
+            // Indien er een fout optreed: toon een foutmelding
             function (error) {
                 alert("Scanning failed: " + error);
             },
+
+            // Eigenschappen van de scanner
             {
                 preferFrontCamera : false, // iOS and Android
                 showFlipCameraButton : true, // iOS and Android
@@ -99,14 +106,20 @@ var overview = function () {
         );
     };
 
+    // Genereer de QR code van het karakter
     var encodeQR = function () {
         cordova.plugins.barcodeScanner.encode(
             cordova.plugins.barcodeScanner.Encode.TEXT_TYPE,
             $(this).attr('qr'),
+
+            // Indien successvol: toon een melding met QR code
             function (success) {
                 alert(success);
                 location.reload();
-            }, function (fail) {
+            },
+
+            // Indien er een fout optreed: toon een foutmelding
+            function (fail) {
                 alert(fail);
             }
         );
